@@ -1,5 +1,5 @@
 # NFT-Tool
-Tools about NFT Project
+Render Tools about NFT Project
 
 ===================================
 
@@ -15,23 +15,47 @@ output folder : get your glb or png file here
 ===================================
 
 usage example :
-	blender -b -P main.py -- [OUTPUT_PATH] [OUTPUT_MODE] [POSE_ID] [COMPONENT_ID_LIST]
+	blender -b -P main.py -- [OUTPUT_PATH] [OUTPUT_MODE] [INPUT_PARAM]
 
 OUTPUT_PATH :
 	relative to the .\output folder
 
 OUTPUT_MODE :
-	0 -- output png and glTF
-	1 -- output png only
-	2 -- output glTF only
+	0 -- Pawn
+	1 -- Composition
 
-COMPONENT_ID_LIST :
-	[0,1,2, ...] -- the id list of components  we want to combine
-		define in *config.py*
+OUTPUT_MODE == 0 (Pawn) :
+	INPUT_PARAM : 
+		{
+			"Head" : COMPONENT_ID,
+			"Jacket" : COMPONENT_ID,
+			"Trousers" : COMPONENT_ID,
+			"Shoes" : COMPONENT_ID,
+			"Type" : COMPONENT_ID,
+			"Pose" : POSE_ID (Optional)
+		}
 
-POSE_ID :
-	0/1/2/... -- the id of animation pose we want to apply 
-
+OUPUT_MODE == 1 (Composition) :
+	INPUT_PARAM : 
+		{
+			"Env" : ENV_ID, --- Ref to environment resource
+			"Pawns" : [
+				{
+					"Pawn" : PAWN_ID, --- Ref to position in scene
+					"Head" : COMPONENT_ID,
+					"Jacket" : COMPONENT_ID,
+					"Trousers" : COMPONENT_ID,
+					"Shoes" : COMPONENT_ID,
+					"Type" : COMPONENT_ID,
+					"Pose" : POSE_ID,
+				},
+				{
+					...
+				},
+				... 
+			]
+		}
+		
 ====================================
 
 extra configuration :
@@ -42,3 +66,6 @@ camera :
 
 render solution :
 	x y 
+
+====================================
+

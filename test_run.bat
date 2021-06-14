@@ -1,0 +1,1 @@
+.\blender\blender.exe -b -P main.py -- fff 0 "{\"ID\" : 0,\"Hat\" : 0,\"Head\" : 0,\"Jacket\" : 0,\"Trousers\" : 0,\"Shoes\" : 0,\"Type\" : 0}"

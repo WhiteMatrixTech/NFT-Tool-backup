@@ -1,0 +1,27 @@
+[
+    {
+        "ID": 0.0,
+        "Category": "Hat",
+        "FilePath": "FilePath/To/Component/Resource/File"
+    },
+    {
+        "ID": 1.0,
+        "Category": "Head",
+        "FilePath": "FilePath/To/Component/Resource/File"
+    },
+    {
+        "ID": 2.0,
+        "Category": "Pose",
+        "FilePath": "FilePath/To/Pose/Resource/File"
+    },
+    {
+        "ID": 3.0,
+        "Category": "Item",
+        "FilePath": "FilePath/To/Item/Resource/File"
+    },
+    {
+        "ID": 4.0,
+        "Category": "Scene",
+        "FilePath": "FilePath/To/Scene/Resource/File"
+    }
+]

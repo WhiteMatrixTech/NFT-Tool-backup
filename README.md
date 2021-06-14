@@ -22,32 +22,36 @@ OUTPUT_PATH :
 
 OUTPUT_MODE :
 	0 -- Pawn
-	1 -- Composition
+	1 -- Pawn with Pose
+	2 -- Composition
 
-OUTPUT_MODE == 0 (Pawn) :
+OUTPUT_MODE == 0 (Pawn) || OUTPUT_MODE == 1 (Pawn with Pose) :
 	INPUT_PARAM : 
 		{
+			"ID" : PAWN_ID,
+			"Hat" : COMPONENT_ID, 
 			"Head" : COMPONENT_ID,
 			"Jacket" : COMPONENT_ID,
 			"Trousers" : COMPONENT_ID,
 			"Shoes" : COMPONENT_ID,
-			"Type" : COMPONENT_ID,
-			"Pose" : POSE_ID (Optional)
+			"Type" : COMPONENT_ID
 		}
+	
+	[Note] when COMPONENT_ID == -1, this component will be ignored
 
-OUPUT_MODE == 1 (Composition) :
+OUPUT_MODE == 2 (Composition) :
 	INPUT_PARAM : 
 		{
-			"Env" : ENV_ID, --- Ref to environment resource
+			"Target" : SCENE_ID/PLACE_ID/PART_ID/WHOLE_ID, --- Ref to environment resource
 			"Pawns" : [
 				{
 					"Pawn" : PAWN_ID, --- Ref to position in scene
+					"Hat" : COMPONENT_ID,
 					"Head" : COMPONENT_ID,
 					"Jacket" : COMPONENT_ID,
 					"Trousers" : COMPONENT_ID,
 					"Shoes" : COMPONENT_ID,
-					"Type" : COMPONENT_ID,
-					"Pose" : POSE_ID,
+					"Type" : COMPONENT_ID
 				},
 				{
 					...
@@ -55,7 +59,7 @@ OUPUT_MODE == 1 (Composition) :
 				... 
 			]
 		}
-		
+
 ====================================
 
 extra configuration :

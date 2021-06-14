@@ -1,0 +1,1 @@
+.\blender\blender.exe -b -P generate_config.py

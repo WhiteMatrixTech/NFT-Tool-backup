@@ -9,9 +9,9 @@ CATEGORY_PLACE = "Place"
 CATEGORY_PART = "Part"
 CATEGORY_WHOLE = "Whole"
 
-pawn_data_format = ["UID", "ID", "Hat", "Head", "Jacket", "Trousers", "Shoes", "Type"]
+pawn_data_format = ["TOKEN_ID", "ID", "Hat", "Head", "Jacket", "Trousers", "Shoes", "Type"]
 composite_data_format = ["Target", "Pawns"]
-global_config = {}
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
 def check_pawn_param(pawn_param):
     for k in pawn_data_format:
@@ -27,7 +27,7 @@ def check_composite_param(composite_param):
             return False
     return True
 
-def make_pawn(composition_data, resource_data, pawn_param, apply_pose):
+def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_pose):
     pawn_id = pawn_param["ID"]
 
     composition_data_founded = None
@@ -35,9 +35,10 @@ def make_pawn(composition_data, resource_data, pawn_param, apply_pose):
         c_id = round(c["ID"])
         if((c_id == pawn_id) and (c["Type"] == CATEGORY_PAWN)):
             composition_data_founded = c
+            break
     
     if composition_data_founded == None:
-        print("composition data not found ! please check composition.xls or run generate_config script! ID : " + pawn_id)
+        print("composition data not found ! please check composition.xls or run generate_config script! ID : " + str(pawn_id))
         return False
 
     # components
@@ -55,13 +56,14 @@ def make_pawn(composition_data, resource_data, pawn_param, apply_pose):
             r_id = round(r["ID"])
             if((r_id == comp_id) and (r["Category"] == comp_name)):
                 res_founded = r
+                break
 
         if res_founded == None:
-            print("resource data not found ! please check resource.xls or run generate_config script! ID : " + comp_id)
+            print("resource data not found ! please check resource.xls or run generate_config script! ID : " + str(comp_id))
             return False
 
-        comp_filepath = os.path.abspath(os.path.join(base_dir, "input",res_founded["FilePath"]))
-        bpy.ops.import_scene.fbx( filepath = component_filepath )
+        comp_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+        bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
     
     # pose 
 
@@ -80,30 +82,30 @@ def make_pawn(composition_data, resource_data, pawn_param, apply_pose):
     return True
 
 
-def make_composite(composition_data, resource_data, composite_param):
+def make_composite(global_config, composition_data, resource_data, composite_param):
     target_id = composite_param["Target"]
     
     composite_tree = {}
     composite_tree["ID"] = target_id
     composite_tree["IsRoot"] = 1
-    root_position = [0, 0, 0]
 
-    def construct(node):
+    def construct(node, root_position):
         node_id = node["ID"]
         node_composition_data_founded = None
         for c in composition_data:
             c_id = round(c["ID"])
             if(c_id == node_id):
                 node_composition_data_founded = c
+                break
 
         if node_composition_data_founded == None:
-            print("composition data not found ! please check composition.xls or run generate_config script! ID : " + node_id)
-            return False
+            print("composition data not found ! please check composition.xls or run generate_config script! ID : " + str(node_id))
+            return
 
         node["Type"] = node_composition_data_founded["Type"]
         node_world_pos = eval(node_composition_data_founded["Position"])
 
-        if node["IsRoot"] == 1:
+        if "IsRoot" in node:
             root_position = node_world_pos
             node["Position"] = [0, 0, 0]
         else:
@@ -111,11 +113,42 @@ def make_composite(composition_data, resource_data, composite_param):
 
         if node["Type"] == CATEGORY_SCENE:
             # load scene file
+            scene_res_id = node_composition_data_founded["Scene_ResID"]
+            res_founded = None
+            for r in resource_data:
+                r_id = round(r["ID"])
+                if((r_id == scene_res_id) and (r["Category"] == CATEGORY_SCENE)):
+                    res_founded = r
+                    break
 
+            if res_founded == None:
+                print("resource data not found ! please check resource.xls or run generate_config script! ID : " + str(scene_res_id))
+                return
+
+            scene_res_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+            bpy.ops.import_scene.fbx( filepath = scene_res_filepath, automatic_bone_orientation = True, force_connect_children = True )
+            scene_objects = bpy.context.selected_objects[:]
+            for scene_object in scene_objects:
+                scene_object.location = (node["Position"][0], node["Position"][1], node["Position"][2])
 
         if node["Type"] == CATEGORY_PAWN:
             # load pawn file
-
+            pawn_id = node["ID"]
+            pawn_token_id = None
+            for pawn_data in composite_param["Pawns"]:
+                if pawn_id == pawn_data["ID"] :
+                    pawn_token_id = pawn_data["TOKEN_ID"]
+                    break
+            
+            pawn_filepath = os.path.abspath(os.path.join(base_dir, "output", CATEGORY_PAWN ,str(pawn_id), CATEGORY_PAWN + "_" + str(pawn_token_id) + ".glb"))
+            if os.path.isfile(pawn_filepath) == False:
+                print("pawn file not found ! please generate this pawn before composite  ID : " + str(pawn_id) + " TOKEN_ID : " + str(pawn_token_id) + " Path :" + str(pawn_filepath))
+                return
+            
+            bpy.ops.import_scene.gltf( filepath = pawn_filepath, bone_heuristic = 'BLENDER')
+            pawn_objects = bpy.context.selected_objects[:]
+            for pawn_object in pawn_objects:
+                pawn_object.location = (node["Position"][0], node["Position"][1], node["Position"][2])
             
             return
 
@@ -129,17 +162,17 @@ def make_composite(composition_data, resource_data, composite_param):
                 node["Children"].append(child_node)
 
         for child_node in node["Children"]:
-            construct(child_node)
+            construct(child_node, root_position)
 
-    ret = construct(composite_tree)
+    construct(composite_tree, [0, 0, 0])
 
-    return ret
+    return
 
 
 
 def export_picture(export_filepath, resolution_2d):
     bpy.context.scene.render.image_settings.file_format='PNG'
-    bpy.context.scene.render.filepath = filepath
+    bpy.context.scene.render.filepath = export_filepath
     bpy.context.scene.render.resolution_x = resolution_2d["x"]
     bpy.context.scene.render.resolution_y = resolution_2d["y"]
     bpy.ops.render.render(write_still=True)
@@ -149,10 +182,8 @@ def export_model(export_filepath):
 
 
 def main(argv):
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-
     output_path = os.path.join(base_dir, "output")
-    output_mode = argv[0]
+    output_mode = int(argv[0])
     input_param = json.loads(argv[1])
 
     composition_json_filepath = os.path.join(base_dir, "composition.json")
@@ -177,17 +208,17 @@ def main(argv):
         if check_pawn_param(pawn_param) == False :
             return
 
-        make_successed = make_pawn(composition_data, resource_data, pawn_param, output_mode == 1)
+        make_successed = make_pawn(global_config, composition_data, resource_data, pawn_param, output_mode == 1)
         if make_successed == True:
             #picture
-            pawn_picture_filename = CATEGORY_PAWN + "_" + pawn_param["UID"] + ".png"
-            pawn_picture_filepath = os.path.join(output_path, "pawn", pawn_param["ID"], pawn_picture_filename)
+            pawn_picture_filename = CATEGORY_PAWN + "_" + str(pawn_param["TOKEN_ID"]) + ".png"
+            pawn_picture_filepath = os.path.join(output_path, "pawn", str(pawn_param["ID"]), pawn_picture_filename)
             resolution_2d = global_config["Resolution"][CATEGORY_PAWN]
             export_picture(pawn_picture_filepath, resolution_2d)
 
             #model
-            pawn_model_filename = CATEGORY_PAWN + "_" + pawn_param["UID"] + ".glb"
-            pawn_model_filepath = os.path.join(output_path, "pawn", pawn_param["ID"], pawn_model_filename)
+            pawn_model_filename = CATEGORY_PAWN + "_" + str(pawn_param["TOKEN_ID"]) + ".glb"
+            pawn_model_filepath = os.path.join(output_path, "pawn", str(pawn_param["ID"]), pawn_model_filename)
             export_model(pawn_model_filepath)
 
     
@@ -196,31 +227,31 @@ def main(argv):
         if check_composite_param(composite_param) == False :
             return
 
-        make_successed = make_composite(composition_data, resource_data, composite_param)
+        make_composite(global_config, composition_data, resource_data, composite_param)
 
-        if make_successed == True:
-            target_id = composite_param["Target"]
-            composition_data_founded = None
-            for c in composition_data:
-                c_id = round(c["ID"])
-                if(c_id == target_id):
-                    composition_data_founded = c
-            if composition_data_founded == None:
-                print("composition data not found ! please check composition.xls or run generate_config script! ID : " + target_id)
-                return
+        target_id = composite_param["Target"]
+        composition_data_founded = None
+        for c in composition_data:
+            c_id = round(c["ID"])
+            if(c_id == target_id):
+                composition_data_founded = c
+                break
+        if composition_data_founded == None:
+            print("composition data not found ! please check composition.xls or run generate_config script! ID : " + str(target_id))
+            return
 
-            target_type = composition_data_founded["Type"]
+        target_type = composition_data_founded["Type"]
 
-            #picture
-            composite_picture_filename = target_type + "_" + composite_param["UID"] + ".png"
-            composite_picture_filepath = os.path.join(output_path, target_type.lower(), composite_picture_filename)
-            resolution_2d = global_config["Resolution"][target_type]
-            export_picture(composite_picture_filepath, resolution_2d)
+        #picture
+        composite_picture_filename = target_type + "_" + str(composite_param["TOKEN_ID"]) + ".png"
+        composite_picture_filepath = os.path.join(output_path, target_type.lower(), composite_picture_filename)
+        resolution_2d = global_config["Resolution"][target_type]
+        export_picture(composite_picture_filepath, resolution_2d)
 
-            #model
-            #composite_model_filename = target_type + "_" + composite_param["UID"] + ".glb"
-            #composite_model_filepath = os.path.join(output_path, target_type.lower(), composite_model_filename)
-            #export_model(composite_model_filepath)
+        #model
+        #composite_model_filename = target_type + "_" + composite_param["TOKEN_ID"] + ".glb"
+        #composite_model_filepath = os.path.join(output_path, target_type.lower(), composite_model_filename)
+        #export_model(composite_model_filepath)
 
 
     # do some cleaning

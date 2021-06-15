@@ -1,0 +1,1 @@
+.\blender\blender.exe -b -P main.py -- 0 "{\"TOKEN_ID\" : 31,\"ID\" : 31,\"Hat\" : 0,\"Head\" : 1,\"Jacket\" : -1,\"Trousers\" : -1,\"Shoes\" : -1,\"Type\" : 5}"

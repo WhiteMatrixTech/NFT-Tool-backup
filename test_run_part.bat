@@ -1,0 +1,1 @@
+.\blender\blender.exe -b -P main.py -- 2 "{\"Target\" : 59,\"TOKEN_ID\" : 303,\"Pawns\" : [{\"ID\":24,\"TOKEN_ID\":24},{\"ID\":25,\"TOKEN_ID\":25},{\"ID\":26,\"TOKEN_ID\":26},{\"ID\":27,\"TOKEN_ID\":27},{\"ID\":28,\"TOKEN_ID\":28},{\"ID\":29,\"TOKEN_ID\":29},{\"ID\":30,\"TOKEN_ID\":30},{\"ID\":31,\"TOKEN_ID\":31}]}"

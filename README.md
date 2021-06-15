@@ -14,7 +14,7 @@ OUTPUT_MODE :
 OUTPUT_MODE == 0 (Pawn) || OUTPUT_MODE == 1 (Pawn with Pose) :
 	INPUT_PARAM : 
 		{
-			"UID" : UNIQUE_ID,
+			"TOKEN_ID" : UNIQUE_ID,
 			"ID" : PAWN_ID,
 			"Hat" : COMPONENT_ID, 
 			"Head" : COMPONENT_ID,
@@ -30,11 +30,11 @@ OUPUT_MODE == 2 (Composition) :
 	INPUT_PARAM : 
 		{
 			"Target" : SCENE_ID/PLACE_ID/PART_ID/WHOLE_ID,
-			"UID" : UNIQUE_ID,
+			"TOKEN_ID" : UNIQUE_ID,
 			"Pawns" : [
 				{
-					"P" : PAWN_ID,
-					"UID" : UNIQUE_ID,
+					"ID" : PAWN_ID,
+					"TOKEN_ID" : UNIQUE_ID,
 				},
 				... 
 			]

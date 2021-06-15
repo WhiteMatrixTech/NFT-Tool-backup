@@ -2,46 +2,611 @@
     {
         "ID": 0.0,
         "Type": "Pawn",
-        "ParentID": 1.0,
-        "Pawn_PoseID": 0.0,
-        "Pawn_LeftHandID": 1.0,
-        "Pawn_RightHandID": 2.0,
-        "Position": "[1.1, 2.2, 3.3]"
+        "ParentID": 32.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-7, 6, 0]"
     },
     {
         "ID": 1.0,
-        "Type": "Scene",
-        "ParentID": 2.0,
-        "Pawn_PoseID": "",
-        "Pawn_LeftHandID": "",
-        "Pawn_RightHandID": "",
-        "Position": "[1.1, 2.2, 3.3]"
+        "Type": "Pawn",
+        "ParentID": 32.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-5, 6, 0]"
     },
     {
         "ID": 2.0,
-        "Type": "Place",
-        "ParentID": 3.0,
-        "Pawn_PoseID": "",
-        "Pawn_LeftHandID": "",
+        "Type": "Pawn",
+        "ParentID": 33.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
         "Pawn_RightHandID": "",
-        "Position": "[1.1, 2.2, 3.3]"
+        "Scene_ResID": "",
+        "Position": "[-3, 6, 0]"
     },
     {
         "ID": 3.0,
-        "Type": "Part",
-        "ParentID": 4.0,
-        "Pawn_PoseID": "",
-        "Pawn_LeftHandID": "",
+        "Type": "Pawn",
+        "ParentID": 33.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
         "Pawn_RightHandID": "",
-        "Position": "[1.1, 2.2, 3.3]"
+        "Scene_ResID": "",
+        "Position": "[-1, 6, 0]"
     },
     {
         "ID": 4.0,
+        "Type": "Pawn",
+        "ParentID": 34.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-7, 2, 0]"
+    },
+    {
+        "ID": 5.0,
+        "Type": "Pawn",
+        "ParentID": 34.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-5, 2, 0]"
+    },
+    {
+        "ID": 6.0,
+        "Type": "Pawn",
+        "ParentID": 35.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-3, 2, 0]"
+    },
+    {
+        "ID": 7.0,
+        "Type": "Pawn",
+        "ParentID": 35.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-1, 2, 0]"
+    },
+    {
+        "ID": 8.0,
+        "Type": "Pawn",
+        "ParentID": 36.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[1, 6, 0]"
+    },
+    {
+        "ID": 9.0,
+        "Type": "Pawn",
+        "ParentID": 36.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[3, 6, 0]"
+    },
+    {
+        "ID": 10.0,
+        "Type": "Pawn",
+        "ParentID": 37.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[5, 6, 0]"
+    },
+    {
+        "ID": 11.0,
+        "Type": "Pawn",
+        "ParentID": 37.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[7, 6, 0]"
+    },
+    {
+        "ID": 12.0,
+        "Type": "Pawn",
+        "ParentID": 38.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[1, 2, 0]"
+    },
+    {
+        "ID": 13.0,
+        "Type": "Pawn",
+        "ParentID": 38.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[3, 2, 0]"
+    },
+    {
+        "ID": 14.0,
+        "Type": "Pawn",
+        "ParentID": 39.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[5, 2, 0]"
+    },
+    {
+        "ID": 15.0,
+        "Type": "Pawn",
+        "ParentID": 39.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": 7.0,
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[7, 2, 0]"
+    },
+    {
+        "ID": 16.0,
+        "Type": "Pawn",
+        "ParentID": 40.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-7, -2, 0]"
+    },
+    {
+        "ID": 17.0,
+        "Type": "Pawn",
+        "ParentID": 40.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-5, -2, 0]"
+    },
+    {
+        "ID": 18.0,
+        "Type": "Pawn",
+        "ParentID": 41.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-3, -2, 0]"
+    },
+    {
+        "ID": 19.0,
+        "Type": "Pawn",
+        "ParentID": 41.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-1, -2, 0]"
+    },
+    {
+        "ID": 20.0,
+        "Type": "Pawn",
+        "ParentID": 42.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-7, -6, 0]"
+    },
+    {
+        "ID": 21.0,
+        "Type": "Pawn",
+        "ParentID": 42.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-5, -6, 0]"
+    },
+    {
+        "ID": 22.0,
+        "Type": "Pawn",
+        "ParentID": 43.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-3, -6, 0]"
+    },
+    {
+        "ID": 23.0,
+        "Type": "Pawn",
+        "ParentID": 43.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[-1, -6, 0]"
+    },
+    {
+        "ID": 24.0,
+        "Type": "Pawn",
+        "ParentID": 44.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[1, -2, 0]"
+    },
+    {
+        "ID": 25.0,
+        "Type": "Pawn",
+        "ParentID": 44.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[3, -2, 0]"
+    },
+    {
+        "ID": 26.0,
+        "Type": "Pawn",
+        "ParentID": 45.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[5, -2, 0]"
+    },
+    {
+        "ID": 27.0,
+        "Type": "Pawn",
+        "ParentID": 45.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[7, -2, 0]"
+    },
+    {
+        "ID": 28.0,
+        "Type": "Pawn",
+        "ParentID": 46.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[1, -6, 0]"
+    },
+    {
+        "ID": 29.0,
+        "Type": "Pawn",
+        "ParentID": 46.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[3, -6, 0]"
+    },
+    {
+        "ID": 30.0,
+        "Type": "Pawn",
+        "ParentID": 47.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[5, -6, 0]"
+    },
+    {
+        "ID": 31.0,
+        "Type": "Pawn",
+        "ParentID": 47.0,
+        "Pawn_PoseID": 6.0,
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": 7.0,
+        "Scene_ResID": "",
+        "Position": "[7, -6, 0]"
+    },
+    {
+        "ID": 32.0,
+        "Type": "Scene",
+        "ParentID": 48.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-6, 6, 0]"
+    },
+    {
+        "ID": 33.0,
+        "Type": "Scene",
+        "ParentID": 48.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-2, 6, 0]"
+    },
+    {
+        "ID": 34.0,
+        "Type": "Scene",
+        "ParentID": 49.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-6, 2, 0]"
+    },
+    {
+        "ID": 35.0,
+        "Type": "Scene",
+        "ParentID": 49.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-2, 2, 0]"
+    },
+    {
+        "ID": 36.0,
+        "Type": "Scene",
+        "ParentID": 50.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[2, 6, 0]"
+    },
+    {
+        "ID": 37.0,
+        "Type": "Scene",
+        "ParentID": 50.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[6, 6, 0]"
+    },
+    {
+        "ID": 38.0,
+        "Type": "Scene",
+        "ParentID": 51.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[2, 2, 0]"
+    },
+    {
+        "ID": 39.0,
+        "Type": "Scene",
+        "ParentID": 51.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[6, 2, 0]"
+    },
+    {
+        "ID": 40.0,
+        "Type": "Scene",
+        "ParentID": 52.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-6, -2, 0]"
+    },
+    {
+        "ID": 41.0,
+        "Type": "Scene",
+        "ParentID": 52.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-2, -2, 0]"
+    },
+    {
+        "ID": 42.0,
+        "Type": "Scene",
+        "ParentID": 53.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-6, -6, 0]"
+    },
+    {
+        "ID": 43.0,
+        "Type": "Scene",
+        "ParentID": 53.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[-2, -6, 0]"
+    },
+    {
+        "ID": 44.0,
+        "Type": "Scene",
+        "ParentID": 54.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[2, -2, 0]"
+    },
+    {
+        "ID": 45.0,
+        "Type": "Scene",
+        "ParentID": 54.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[6, -2, 0]"
+    },
+    {
+        "ID": 46.0,
+        "Type": "Scene",
+        "ParentID": 55.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[2, -6, 0]"
+    },
+    {
+        "ID": 47.0,
+        "Type": "Scene",
+        "ParentID": 55.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": 8.0,
+        "Position": "[6, -6, 0]"
+    },
+    {
+        "ID": 48.0,
+        "Type": "Place",
+        "ParentID": 56.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-4, 6, 0]"
+    },
+    {
+        "ID": 49.0,
+        "Type": "Place",
+        "ParentID": 56.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-4, 2, 0]"
+    },
+    {
+        "ID": 50.0,
+        "Type": "Place",
+        "ParentID": 57.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[4, 6, 0]"
+    },
+    {
+        "ID": 51.0,
+        "Type": "Place",
+        "ParentID": 57.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[4, 2, 0]"
+    },
+    {
+        "ID": 52.0,
+        "Type": "Place",
+        "ParentID": 58.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-4, -2, 0]"
+    },
+    {
+        "ID": 53.0,
+        "Type": "Place",
+        "ParentID": 58.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-4, -6, 0]"
+    },
+    {
+        "ID": 54.0,
+        "Type": "Place",
+        "ParentID": 59.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[4, -2, 0]"
+    },
+    {
+        "ID": 55.0,
+        "Type": "Place",
+        "ParentID": 59.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[4, -6, 0]"
+    },
+    {
+        "ID": 56.0,
+        "Type": "Part",
+        "ParentID": 60.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-4, 4, 0]"
+    },
+    {
+        "ID": 57.0,
+        "Type": "Part",
+        "ParentID": 60.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[4, 4, 0]"
+    },
+    {
+        "ID": 58.0,
+        "Type": "Part",
+        "ParentID": 60.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[-4, -4, 0]"
+    },
+    {
+        "ID": 59.0,
+        "Type": "Part",
+        "ParentID": 60.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Scene_ResID": "",
+        "Position": "[4, -4, 0]"
+    },
+    {
+        "ID": 60.0,
         "Type": "Whole",
         "ParentID": -1.0,
         "Pawn_PoseID": "",
         "Pawn_LeftHandID": "",
         "Pawn_RightHandID": "",
-        "Position": "[0.0, 0.0, 0.0]"
+        "Scene_ResID": "",
+        "Position": "[0, 0, 0]"
     }
 ]

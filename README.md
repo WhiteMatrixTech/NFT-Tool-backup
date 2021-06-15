@@ -7,38 +7,41 @@ usage example :
 	blender -b -P main.py -- [OUTPUT_MODE] [INPUT_PARAM]
 
 OUTPUT_MODE :
+	
 	0 -- Pawn
+
 	1 -- Pawn with Pose
+	
 	2 -- Composition
 
-OUTPUT_MODE == 0 (Pawn) || OUTPUT_MODE == 1 (Pawn with Pose) :
-	INPUT_PARAM : 
-		{
-			"TOKEN_ID" : UNIQUE_ID,
-			"ID" : PAWN_ID,
-			"Hat" : COMPONENT_ID, 
-			"Head" : COMPONENT_ID,
-			"Jacket" : COMPONENT_ID,
-			"Trousers" : COMPONENT_ID,
-			"Shoes" : COMPONENT_ID,
-			"Type" : COMPONENT_ID
-		}
+OUTPUT_MODE == 0 (Pawn) || OUTPUT_MODE == 1 (Pawn with Pose) INPUT_PARAM :
+
+{
+	"TOKEN_ID" : UNIQUE_ID,
+	"ID" : PAWN_ID,
+	"Hat" : COMPONENT_ID, 
+	"Head" : COMPONENT_ID,
+	"Jacket" : COMPONENT_ID,
+	"Trousers" : COMPONENT_ID,
+	"Shoes" : COMPONENT_ID,
+	"Type" : COMPONENT_ID
+}
 	
 	[Note] when COMPONENT_ID == -1, this component will be ignored
 
-OUPUT_MODE == 2 (Composition) :
-	INPUT_PARAM : 
+OUPUT_MODE == 2 (Composition) INPUT_PARAM :
+
+{
+	"Target" : SCENE_ID/PLACE_ID/PART_ID/WHOLE_ID,
+	"TOKEN_ID" : UNIQUE_ID,
+	"Pawns" : [
 		{
-			"Target" : SCENE_ID/PLACE_ID/PART_ID/WHOLE_ID,
+			"ID" : PAWN_ID,
 			"TOKEN_ID" : UNIQUE_ID,
-			"Pawns" : [
-				{
-					"ID" : PAWN_ID,
-					"TOKEN_ID" : UNIQUE_ID,
-				},
-				... 
-			]
-		}
+		},
+		... 
+	]
+}
 
 ====================================
 

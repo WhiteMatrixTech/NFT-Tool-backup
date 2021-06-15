@@ -2,45 +2,46 @@
     {
         "ID": 0.0,
         "Type": "Pawn",
+        "ParentID": 1.0,
         "Pawn_PoseID": 0.0,
-        "Pawn_Position": "[1.1, 2.2, 3.3]",
         "Pawn_LeftHandID": 1.0,
         "Pawn_RightHandID": 2.0,
-        "Scene_Position": "",
-        "Place_Position": "",
-        "Part_Position": ""
+        "Position": "[1.1, 2.2, 3.3]"
     },
     {
         "ID": 1.0,
         "Type": "Scene",
+        "ParentID": 2.0,
         "Pawn_PoseID": "",
-        "Pawn_Position": "",
         "Pawn_LeftHandID": "",
         "Pawn_RightHandID": "",
-        "Scene_Position": "[1.1, 2.2, 3.3]",
-        "Place_Position": "",
-        "Part_Position": ""
+        "Position": "[1.1, 2.2, 3.3]"
     },
     {
         "ID": 2.0,
         "Type": "Place",
+        "ParentID": 3.0,
         "Pawn_PoseID": "",
-        "Pawn_Position": "",
         "Pawn_LeftHandID": "",
         "Pawn_RightHandID": "",
-        "Scene_Position": "",
-        "Place_Position": "[1.1, 2.2, 3.3]",
-        "Part_Position": ""
+        "Position": "[1.1, 2.2, 3.3]"
     },
     {
         "ID": 3.0,
         "Type": "Part",
+        "ParentID": 4.0,
         "Pawn_PoseID": "",
-        "Pawn_Position": "",
         "Pawn_LeftHandID": "",
         "Pawn_RightHandID": "",
-        "Scene_Position": "",
-        "Place_Position": "",
-        "Part_Position": "[1.1, 2.2, 3.3]"
+        "Position": "[1.1, 2.2, 3.3]"
+    },
+    {
+        "ID": 4.0,
+        "Type": "Whole",
+        "ParentID": -1.0,
+        "Pawn_PoseID": "",
+        "Pawn_LeftHandID": "",
+        "Pawn_RightHandID": "",
+        "Position": "[0.0, 0.0, 0.0]"
     }
 ]

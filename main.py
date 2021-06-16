@@ -43,6 +43,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     # components
 
+    component_objects = []
     components = pawn_data_format[2:]
     for comp_name in components:
 
@@ -64,6 +65,8 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
         comp_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
         bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
+
+        component_objects.append(bpy.context.selected_objects[:])
     
     # pose 
 
@@ -71,13 +74,75 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
     if apply_pose == True:
         pose_id = round(composition_data_founded["Pawn_PoseID"])
 
+        res_founded = None
+        for r in resource_data:
+            r_id = round(r["ID"])
+            if((r_id == pose_id) and (r["Category"] == "Pose")):
+                res_founded = r
+                break
+
+        if res_founded == None:
+            print("resource data not found ! please check resource.xls or run generate_config script! ID : " + str(pose_id))
+            return False
+
+        pose_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+        bpy.ops.import_scene.fbx( filepath = pose_filepath, automatic_bone_orientation = True, force_connect_children = True )
+
+        pose_objects = bpy.context.selected_objects[:]
+        bpy.ops.object.select_all(action='DESELECT')
+
+        for comp_obj in component_objects:
+            if(comp_obj[0].animation_data == None):
+                comp_obj[0].animation_data_create()
+            comp_obj[0].animation_data.action = bpy.data.actions[0]
+
+        bpy.ops.object.select_all(action='DESELECT')
+
+        for pose in pose_objects:
+            pose.select_set(True)
+
+        bpy.ops.object.delete()
 
     # item
     
     if apply_pose == True:
-        item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
-        item_righthand = round(composition_data_founded["Pawn_RightHandID"])
-        
+        item_lefthand = -1
+        item_righthand = -1
+        if(composition_data_founded["Pawn_LeftHandID"] != ""):
+            item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
+        if(composition_data_founded["Pawn_RightHandID"] != ""):
+            item_righthand = round(composition_data_founded["Pawn_RightHandID"])
+
+        if item_lefthand != -1:
+            res_founded = None
+            for r in resource_data:
+                r_id = round(r["ID"])
+                if((r_id == item_lefthand) and (r["Category"] == "Item")):
+                    res_founded = r
+                    break
+
+            if res_founded == None:
+                print("resource data not found ! please check resource.xls or run generate_config script! ID : " + str(item_lefthand))
+                return False
+
+            item_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+            bpy.ops.import_scene.fbx( filepath = item_filepath )
+
+
+        if item_righthand != -1:
+            res_founded = None
+            for r in resource_data:
+                r_id = round(r["ID"])
+                if((r_id == item_righthand) and (r["Category"] == "Item")):
+                    res_founded = r
+                    break
+
+            if res_founded == None:
+                print("resource data not found ! please check resource.xls or run generate_config script! ID : " + str(item_righthand))
+                return False
+
+            item_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+            bpy.ops.import_scene.fbx( filepath = item_filepath )
     
     return True
 

@@ -2,46 +2,55 @@
     {
         "ID": 0.0,
         "Category": "Hat",
-        "FilePath": "test/M_0000_hair.FBX"
+        "FilePath": "test/M_0000_hair.FBX",
+        "Scale": ""
     },
     {
         "ID": 1.0,
         "Category": "Head",
-        "FilePath": "test/M_0000_head.FBX"
+        "FilePath": "test/M_0000_head.FBX",
+        "Scale": ""
     },
     {
         "ID": 2.0,
         "Category": "Jacket",
-        "FilePath": ""
+        "FilePath": "",
+        "Scale": ""
     },
     {
         "ID": 3.0,
         "Category": "Trousers",
-        "FilePath": ""
+        "FilePath": "",
+        "Scale": ""
     },
     {
         "ID": 4.0,
         "Category": "Shoes",
-        "FilePath": ""
+        "FilePath": "",
+        "Scale": ""
     },
     {
         "ID": 5.0,
         "Category": "Type",
-        "FilePath": "test/M_0000_body.FBX"
+        "FilePath": "test/M_0000_body.FBX",
+        "Scale": ""
     },
     {
         "ID": 6.0,
         "Category": "Pose",
-        "FilePath": "test/M_P1_01.FBX"
+        "FilePath": "test/M_P1_01.FBX",
+        "Scale": ""
     },
     {
         "ID": 7.0,
         "Category": "Item",
-        "FilePath": "test/Prop_dao01.FBX"
+        "FilePath": "test/Prop_dao01.FBX",
+        "Scale": 3.0
     },
     {
         "ID": 8.0,
         "Category": "Scene",
-        "FilePath": "test/Prop_zuozi01.FBX"
+        "FilePath": "test/Prop_zuozi01.FBX",
+        "Scale": ""
     }
 ]

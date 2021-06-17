@@ -20,24 +20,24 @@ Render Tools about NFT Project
 
 ```json
 {
-	"TOKEN_ID" : 0,
-	"ID" : 0,
-	"Hat" : 0, 
-	"Head" : 0,
-	"Jacket" : 0,
-	"Trousers" : 0,
-	"Shoes" : 0,
-	"Type" : 0
+	"tokenId" : 0,
+	"id" : 0,
+	"hat" : 0, 
+	"head" : 0,
+	"jacket" : 0,
+	"trousers" : 0,
+	"shoes" : 0,
+	"type" : 0
 }
 ```
 	
-	ID : Pawn ID
-	Hat : Component ID
-	Head : Component ID
-	Jacket : Component ID
-	Trousers : Component ID
-	Shoes : Component ID
-	Type : Component ID
+	id : Pawn ID
+	hat : Component ID
+	head : Component ID
+	jacket : Component ID
+	trousers : Component ID
+	shoes : Component ID
+	type : Component ID
 
 	[Note] when COMPONENT_ID == -1, this component will be ignored
 
@@ -45,23 +45,23 @@ Render Tools about NFT Project
 
 ```json
 {
-	"Target" : 0, 
-	"TOKEN_ID" : 0,
-	"Pawns" : [
+	"target" : 0, 
+	"tokenId" : 0,
+	"pawns" : [
 		{
-			"ID" : 0,
-			"TOKEN_ID" : 0,
+			"id" : 0,
+			"tokenId" : 0,
 		},
 		{
-			"ID" : 0,
-			"TOKEN_ID" : 0,
+			"id" : 0,
+			"tokenId" : 0,
 		}
 	]
 }
 ```
 
-	Target : Scene ID / Place ID / Part ID / Whole ID
-	Pawns : Array of Pawns 
+	target : Scene ID / Place ID / Part ID / Whole ID
+	pawns : Array of Pawns 
 
 ## OUTPUT :
 

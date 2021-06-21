@@ -2,6 +2,7 @@ import bpy
 import sys
 import os
 import json
+import better_fbx
 
 TYPE_PAWN = "Pawn"
 TYPE_SCENE = "Scene"
@@ -83,8 +84,8 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
         res_founded = get_resource_data(resource_data, comp_id, comp_name)
 
         comp_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
-        bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
-
+        #bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
+        better_fbx.fuck_fbx(bpy.context, comp_filepath)
         component_objects.extend(bpy.context.selected_objects[:])
 
     # material
@@ -126,16 +127,15 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
             #bpy.context.scene.objects.active = comp_obj
             
     bpy.context.scene.frame_set(2)
-
     bpy.ops.object.select_all(action='DESELECT')
-
     for pose in pose_objects:
         pose.select_set(True)
-
     bpy.ops.object.delete()
 
     # item
     
+    item_objects = []
+
     if apply_pose == True:
         item_lefthand = -1
         item_righthand = -1
@@ -148,7 +148,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
             res_founded = get_resource_data(resource_data, item_id, "Item")
             item_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
             bpy.ops.import_scene.fbx( filepath = item_filepath )
-            item_objects = bpy.context.selected_objects[:]
+            item_objects.extend(bpy.context.selected_objects[:])
             for item_obj in item_objects:
                 item_obj.scale = (res_founded["Scale"], res_founded["Scale"], res_founded["Scale"])
 
@@ -157,6 +157,13 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
         if item_righthand != -1:
             apply_item(item_righthand, "")
+
+    bpy.ops.object.select_all(action='DESELECT')
+
+    for comp_obj in component_objects:
+        comp_obj.select_set(True)
+    for item_obj in item_objects:
+        item_obj.select_set(True)
     
     return True
 
@@ -240,7 +247,7 @@ def export_picture(export_filepath, resolution_2d):
     bpy.ops.render.render(write_still=True)
 
 def export_model(export_filepath):
-    bpy.ops.export_scene.gltf(filepath = export_filepath)
+    bpy.ops.export_scene.gltf(filepath = export_filepath, use_selection = True, export_materials = 'EXPORT', export_animations = False, export_current_frame = True, export_skins = True)
 
 
 def main(argv):
@@ -248,8 +255,15 @@ def main(argv):
     output_mode = int(argv[0])
     input_param = json.loads(argv[1])
 
+    bpy.ops.preferences.addon_enable(module='better_fbx')
+    bpy.ops.script.reload()
+
     environment_blend_file = os.path.join(base_dir, "input", "environment.blend")
     bpy.ops.wm.open_mainfile(filepath = environment_blend_file)
+
+    #comp_filepath = os.path.abspath(os.path.join(base_dir, "input", "test617/HEAD/A59_HEAD_zongzi.FBX"))
+    #bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
+    #better_fbx.fuck_fbx(bpy.context, comp_filepath)
 
     composition_json_filepath = os.path.join(base_dir, "composition.json")
     composition_json_file = open(composition_json_filepath)
@@ -275,16 +289,18 @@ def main(argv):
 
         make_successed = make_pawn(global_config, composition_data, resource_data, pawn_param, output_mode == 1)
         if make_successed == True:
+            #model
+            pawn_model_filename = TYPE_PAWN + "_" + str(pawn_param["tokenId"]) + ".glb"
+            pawn_model_filepath = os.path.join(output_path, "pawn", str(pawn_param["id"]), pawn_model_filename)
+            export_model(pawn_model_filepath)
+
             #picture
             pawn_picture_filename = TYPE_PAWN + "_" + str(pawn_param["tokenId"]) + ".png"
             pawn_picture_filepath = os.path.join(output_path, "pawn", str(pawn_param["id"]), pawn_picture_filename)
             resolution_2d = global_config["Resolution"][TYPE_PAWN]
             export_picture(pawn_picture_filepath, resolution_2d)
 
-            #model
-            pawn_model_filename = TYPE_PAWN + "_" + str(pawn_param["tokenId"]) + ".glb"
-            pawn_model_filepath = os.path.join(output_path, "pawn", str(pawn_param["id"]), pawn_model_filename)
-            export_model(pawn_model_filepath)
+            
 
     
     if (output_mode == 2):

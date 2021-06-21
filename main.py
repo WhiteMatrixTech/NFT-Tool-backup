@@ -70,7 +70,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
     pawn_id = pawn_param["id"]
 
     composition_data_founded = get_composition_data(composition_data, pawn_id, TYPE_PAWN)
-    
+
     # components
 
     component_objects = []
@@ -85,9 +85,25 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
         comp_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
         bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
 
-        component_objects.append(bpy.context.selected_objects[:])
-    
+        component_objects.extend(bpy.context.selected_objects[:])
+
+    # material
+
+    for obj in component_objects:
+        generic_mat = bpy.data.materials.get("GenericMaterial").copy()
+        if obj.data.materials:
+            using_mat = obj.data.materials[0]
+            tex_image_node = using_mat.node_tree.nodes["Image Texture"]
+            using_tex = tex_image_node.image
+            print(using_tex)
+
+            generic_mat.node_tree.nodes["Image Texture"].image = using_tex
+            obj.data.materials[0] = generic_mat
+
     # pose 
+
+    for action in bpy.data.actions:
+        bpy.data.actions.remove(action)
 
     pose_id = global_config["DefaultPoseID"]
     if apply_pose == True:
@@ -97,14 +113,19 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     pose_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
     bpy.ops.import_scene.fbx( filepath = pose_filepath, automatic_bone_orientation = True, force_connect_children = True )
-
     pose_objects = bpy.context.selected_objects[:]
     bpy.ops.object.select_all(action='DESELECT')
 
+    action_to_apply = bpy.data.actions[0]
+
     for comp_obj in component_objects:
-        if(comp_obj[0].animation_data == None):
-            comp_obj[0].animation_data_create()
-        comp_obj[0].animation_data.action = bpy.data.actions[0]
+        if comp_obj.name.startswith("Bip"):
+            if(comp_obj.animation_data == None):
+                comp_obj.animation_data_create()
+            comp_obj.animation_data.action = action_to_apply
+            #bpy.context.scene.objects.active = comp_obj
+            
+    bpy.context.scene.frame_set(2)
 
     bpy.ops.object.select_all(action='DESELECT')
 
@@ -227,6 +248,9 @@ def main(argv):
     output_mode = int(argv[0])
     input_param = json.loads(argv[1])
 
+    environment_blend_file = os.path.join(base_dir, "input", "environment.blend")
+    bpy.ops.wm.open_mainfile(filepath = environment_blend_file)
+
     composition_json_filepath = os.path.join(base_dir, "composition.json")
     composition_json_file = open(composition_json_filepath)
     composition_data = json.load(composition_json_file)
@@ -240,8 +264,8 @@ def main(argv):
     global_config = json.load(config_json_file)
 
     # delete the default cube
-    objs = bpy.data.objects
-    objs.remove(objs["Cube"], do_unlink=True)
+    #objs = bpy.data.objects
+    #objs.remove(objs["Cube"], do_unlink=True)
 
     # make and export
     if (output_mode == 0) or (output_mode == 1):

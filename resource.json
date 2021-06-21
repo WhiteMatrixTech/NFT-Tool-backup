@@ -32,20 +32,20 @@
     {
         "ID": 5.0,
         "Category": "Type",
-        "FilePath": "test617/type/M_0000.FBX",
+        "FilePath": "test0621/luomo/Naked(1)/Naked/X05_body_Type5.FBX",
         "Scale": ""
     },
     {
         "ID": 6.0,
         "Category": "Pose",
-        "FilePath": "test617/pose/M_0000_P1_1.FBX",
+        "FilePath": "test0621/M_0000_P1_10.FBX",
         "Scale": ""
     },
     {
         "ID": 7.0,
         "Category": "Item",
-        "FilePath": "test617/item/prop_Tiao_Xingli_01.FBX",
-        "Scale": 3.0
+        "FilePath": "test0621/biandan/prop_biandan_01.FBX",
+        "Scale": 1.0
     },
     {
         "ID": 8.0,

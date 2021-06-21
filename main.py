@@ -91,12 +91,13 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
     # material
 
     for obj in component_objects:
+        if obj.type != "MESH":
+            continue
         generic_mat = bpy.data.materials.get("GenericMaterial").copy()
         if obj.data.materials:
             using_mat = obj.data.materials[0]
             tex_image_node = using_mat.node_tree.nodes["Image Texture"]
             using_tex = tex_image_node.image
-            print(using_tex)
 
             generic_mat.node_tree.nodes["Image Texture"].image = using_tex
             obj.data.materials[0] = generic_mat
@@ -120,7 +121,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
     action_to_apply = bpy.data.actions[0]
 
     for comp_obj in component_objects:
-        if comp_obj.name.startswith("Bip"):
+        if comp_obj.type == "ARMATURE":
             if(comp_obj.animation_data == None):
                 comp_obj.animation_data_create()
             comp_obj.animation_data.action = action_to_apply
@@ -134,36 +135,36 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     # item
     
-    item_objects = []
-
-    if apply_pose == True:
-        item_lefthand = -1
-        item_righthand = -1
-        if(composition_data_founded["Pawn_LeftHandID"] != ""):
-            item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
-        if(composition_data_founded["Pawn_RightHandID"] != ""):
-            item_righthand = round(composition_data_founded["Pawn_RightHandID"])
-
-        def apply_item(item_id, attach_bone):
-            res_founded = get_resource_data(resource_data, item_id, "Item")
-            item_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
-            bpy.ops.import_scene.fbx( filepath = item_filepath )
-            item_objects.extend(bpy.context.selected_objects[:])
-            for item_obj in item_objects:
-                item_obj.scale = (res_founded["Scale"], res_founded["Scale"], res_founded["Scale"])
-
-        if item_lefthand != -1:
-            apply_item(item_lefthand, "")
-
-        if item_righthand != -1:
-            apply_item(item_righthand, "")
-
-    bpy.ops.object.select_all(action='DESELECT')
+    #item_objects = []
+#
+    #if apply_pose == True:
+    #    item_lefthand = -1
+    #    item_righthand = -1
+    #    if(composition_data_founded["Pawn_LeftHandID"] != ""):
+    #        item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
+    #    if(composition_data_founded["Pawn_RightHandID"] != ""):
+    #        item_righthand = round(composition_data_founded["Pawn_RightHandID"])
+#
+    #    def apply_item(item_id, attach_bone):
+    #        res_founded = get_resource_data(resource_data, item_id, "Item")
+    #        item_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+    #        bpy.ops.import_scene.fbx( filepath = item_filepath )
+    #        item_objects.extend(bpy.context.selected_objects[:])
+    #        for item_obj in item_objects:
+    #            item_obj.scale = (res_founded["Scale"], res_founded["Scale"], res_founded["Scale"])
+#
+    #    if item_lefthand != -1:
+    #        apply_item(item_lefthand, "")
+#
+    #    if item_righthand != -1:
+    #        apply_item(item_righthand, "")
+#
+    #bpy.ops.object.select_all(action='DESELECT')
 
     for comp_obj in component_objects:
         comp_obj.select_set(True)
-    for item_obj in item_objects:
-        item_obj.select_set(True)
+    #for item_obj in item_objects:
+    #    item_obj.select_set(True)
     
     return True
 

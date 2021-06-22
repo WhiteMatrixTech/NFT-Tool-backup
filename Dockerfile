@@ -6,6 +6,6 @@ COPY . .
 
 RUN rm -rf /blender
 
-RUN chmod +x test_run_pawn.sh
+RUN chmod -R 755 scripts
 
 CMD ["/bin/sh", "-c", "echo 'sleep infinity' | bash"]

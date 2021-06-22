@@ -13,6 +13,7 @@ TYPE_WHOLE = "Whole"
 pawn_data_format = ["tokenId", "id", "hat", "head", "jacket", "trousers", "shoes", "type"]
 composite_data_format = ["target", "pawns"]
 base_dir = os.path.dirname(os.path.abspath(__file__))
+data_dir = os.path.join(base_dir, 'data')
 
 class ConfigNotFoundError(Exception):
     pass
@@ -83,7 +84,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
         res_founded = get_resource_data(resource_data, comp_id, comp_name)
 
-        comp_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+        comp_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
         #bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
         better_fbx.fuck_fbx(bpy.context, comp_filepath)
         component_objects.extend(bpy.context.selected_objects[:])
@@ -113,7 +114,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     res_founded = get_resource_data(resource_data, pose_id, "Pose")
 
-    pose_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+    pose_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
     bpy.ops.import_scene.fbx( filepath = pose_filepath, automatic_bone_orientation = True, force_connect_children = True )
     pose_objects = bpy.context.selected_objects[:]
     bpy.ops.object.select_all(action='DESELECT')
@@ -195,7 +196,7 @@ def make_composite(global_config, composition_data, resource_data, composite_par
             scene_res_id = node_composition_data_founded["Scene_ResID"]
             res_founded = get_resource_data(resource_data, scene_res_id, TYPE_SCENE)
 
-            scene_res_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
+            scene_res_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
             bpy.ops.import_scene.fbx( filepath = scene_res_filepath, automatic_bone_orientation = True, force_connect_children = True )
             scene_objects = bpy.context.selected_objects[:]
             for scene_object in scene_objects:
@@ -210,7 +211,7 @@ def make_composite(global_config, composition_data, resource_data, composite_par
                     pawn_token_id = pawn_data["tokenId"]
                     break
             
-            pawn_filepath = os.path.abspath(os.path.join(base_dir, "output", TYPE_PAWN ,str(pawn_id), TYPE_PAWN + "_" + str(pawn_token_id) + ".glb"))
+            pawn_filepath = os.path.abspath(os.path.join(data_dir, "output", TYPE_PAWN ,str(pawn_id), TYPE_PAWN + "_" + str(pawn_token_id) + ".glb"))
             if os.path.isfile(pawn_filepath) == False:
                 print("pawn file not found ! please generate this pawn before composite  ID : " + str(pawn_id) + " tokenId : " + str(pawn_token_id) + " Path :" + str(pawn_filepath))
                 return
@@ -252,29 +253,29 @@ def export_model(export_filepath):
 
 
 def main(argv):
-    output_path = os.path.join(base_dir, "output")
+    output_path = os.path.join(data_dir, "output")
     output_mode = int(argv[0])
     input_param = json.loads(argv[1])
 
     bpy.ops.preferences.addon_enable(module='better_fbx')
     bpy.ops.script.reload()
 
-    environment_blend_file = os.path.join(base_dir, "input", "environment.blend")
+    environment_blend_file = os.path.join(data_dir, "input", "environment.blend")
     bpy.ops.wm.open_mainfile(filepath = environment_blend_file)
 
     #comp_filepath = os.path.abspath(os.path.join(base_dir, "input", "test617/HEAD/A59_HEAD_zongzi.FBX"))
     #bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
     #better_fbx.fuck_fbx(bpy.context, comp_filepath)
 
-    composition_json_filepath = os.path.join(base_dir, "composition.json")
+    composition_json_filepath = os.path.join(data_dir, "composition.json")
     composition_json_file = open(composition_json_filepath)
     composition_data = json.load(composition_json_file)
 
-    resource_json_filepath = os.path.join(base_dir, "resource.json")
+    resource_json_filepath = os.path.join(data_dir, "resource.json")
     resource_json_file = open(resource_json_filepath)
     resource_data = json.load(resource_json_file)
 
-    config_json_filepath = os.path.join(base_dir, "config.json")
+    config_json_filepath = os.path.join(data_dir, "config.json")
     config_json_file = open(config_json_filepath)
     global_config = json.load(config_json_file)
 

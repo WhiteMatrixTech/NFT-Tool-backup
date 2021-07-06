@@ -105,34 +105,34 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     # pose 
 
-    #for action in bpy.data.actions:
-    #    bpy.data.actions.remove(action)
-#
-    #pose_id = global_config["DefaultPoseID"]
-    #if apply_pose == True:
-    #    pose_id = round(composition_data_founded["Pawn_PoseID"])
-#
-    #res_founded = get_resource_data(resource_data, pose_id, "Pose")
-#
-    #pose_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
-    #bpy.ops.import_scene.fbx( filepath = pose_filepath, automatic_bone_orientation = True, force_connect_children = True )
-    #pose_objects = bpy.context.selected_objects[:]
-    #bpy.ops.object.select_all(action='DESELECT')
-#
-    #action_to_apply = bpy.data.actions[0]
-#
-    #for comp_obj in component_objects:
-    #    if comp_obj.type == "ARMATURE":
-    #        if(comp_obj.animation_data == None):
-    #            comp_obj.animation_data_create()
-    #        comp_obj.animation_data.action = action_to_apply
-    #        #bpy.context.scene.objects.active = comp_obj
-    #        
-    #bpy.context.scene.frame_set(2)
-    #bpy.ops.object.select_all(action='DESELECT')
-    #for pose in pose_objects:
-    #    pose.select_set(True)
-    #bpy.ops.object.delete()
+    for action in bpy.data.actions:
+        bpy.data.actions.remove(action)
+
+    pose_id = global_config["DefaultPoseID"]
+    if apply_pose == True:
+        pose_id = round(composition_data_founded["Pawn_PoseID"])
+
+    res_founded = get_resource_data(resource_data, pose_id, "Pose")
+
+    pose_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
+    bpy.ops.import_scene.fbx( filepath = pose_filepath, automatic_bone_orientation = True, force_connect_children = True )
+    pose_objects = bpy.context.selected_objects[:]
+    bpy.ops.object.select_all(action='DESELECT')
+
+    action_to_apply = bpy.data.actions[0]
+
+    for comp_obj in component_objects:
+        if comp_obj.type == "ARMATURE":
+            if(comp_obj.animation_data == None):
+                comp_obj.animation_data_create()
+            comp_obj.animation_data.action = action_to_apply
+            #bpy.context.scene.objects.active = comp_obj
+            
+    bpy.context.scene.frame_set(2)
+    bpy.ops.object.select_all(action='DESELECT')
+    for pose in pose_objects:
+        pose.select_set(True)
+    bpy.ops.object.delete()
 
     # item
     

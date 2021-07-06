@@ -1,0 +1,1 @@
+.\blender\blender.exe -b -P icon.py -- 0x8dd890ca26de4e90fc0182d98ea403d3

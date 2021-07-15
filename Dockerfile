@@ -7,7 +7,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 
-COPY ./blender/2.93/scripts/addons/better_fbx /bin/2.93/scripts/addons/better_fbx
+# COPY ./blender/2.93/scripts/addons/better_fbx /bin/2.93/scripts/addons/better_fbx
 
 COPY . .
 

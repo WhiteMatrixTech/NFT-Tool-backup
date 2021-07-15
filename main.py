@@ -2,7 +2,7 @@ import bpy
 import sys
 import os
 import json
-import better_fbx
+#import better_fbx
 
 TYPE_PAWN = "Pawn"
 TYPE_SCENE = "Scene"
@@ -299,8 +299,8 @@ def main(argv):
     output_mode = int(argv[0])
     input_param = json.loads(argv[1])
 
-    bpy.ops.preferences.addon_enable(module='better_fbx')
-    bpy.ops.script.reload()
+    #bpy.ops.preferences.addon_enable(module='better_fbx')
+    #bpy.ops.script.reload()
 
     environment_blend_file = os.path.join(data_dir, "input", "environment.blend")
     bpy.ops.wm.open_mainfile(filepath = environment_blend_file)

@@ -73,6 +73,8 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     composition_data_founded = get_composition_data(composition_data, pawn_id, TYPE_PAWN)
 
+    armature_obj = None
+
     # components
 
     component_objects = []
@@ -85,9 +87,15 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
         res_founded = get_resource_data(resource_data, comp_id, comp_name)
 
         comp_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
-        #bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
-        better_fbx.fuck_fbx(bpy.context, comp_filepath)
+        bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
+        #better_fbx.fuck_fbx(bpy.context, comp_filepath)
         component_objects.extend(bpy.context.selected_objects[:])
+
+        #if(comp_name == "type"):
+        #    for comp_obj in bpy.context.selected_objects[:]:
+        #        if comp_obj.type == "ARMATURE":
+        #            armature_obj = comp_obj
+        #            break
 
     # material
 
@@ -105,67 +113,101 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     # pose 
 
-    for action in bpy.data.actions:
-        bpy.data.actions.remove(action)
-
-    pose_id = global_config["DefaultPoseID"]
     if apply_pose == True:
+
+        for action in bpy.data.actions:
+            bpy.data.actions.remove(action)
+
         pose_id = round(composition_data_founded["Pawn_PoseID"])
 
-    res_founded = get_resource_data(resource_data, pose_id, "Pose")
+        res_founded = get_resource_data(resource_data, pose_id, "Pose")
 
-    pose_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
-    bpy.ops.import_scene.fbx( filepath = pose_filepath, automatic_bone_orientation = True, force_connect_children = True )
-    pose_objects = bpy.context.selected_objects[:]
-    bpy.ops.object.select_all(action='DESELECT')
+        pose_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
+        bpy.ops.import_scene.fbx( filepath = pose_filepath, automatic_bone_orientation = True, force_connect_children = True )
+        pose_objects = bpy.context.selected_objects[:]
 
-    action_to_apply = bpy.data.actions[0]
+        for pose_obj in pose_objects:
+            if pose_obj.type == "ARMATURE":
+                armature_obj = pose_obj
+                break
 
-    for comp_obj in component_objects:
-        if comp_obj.type == "ARMATURE":
-            if(comp_obj.animation_data == None):
-                comp_obj.animation_data_create()
-            comp_obj.animation_data.action = action_to_apply
-            #bpy.context.scene.objects.active = comp_obj
-            
-    bpy.context.scene.frame_set(2)
-    bpy.ops.object.select_all(action='DESELECT')
-    for pose in pose_objects:
-        pose.select_set(True)
-    bpy.ops.object.delete()
+        bpy.ops.object.select_all(action='DESELECT')
+
+        action_to_apply = bpy.data.actions[0]
+
+        for comp_obj in component_objects:
+            if comp_obj.type == "ARMATURE":
+                comp_obj.animation_data_clear()
+                if(comp_obj.animation_data == None):
+                    comp_obj.animation_data_create()
+                comp_obj.animation_data.action = action_to_apply
+                #bpy.context.view_layer.objects.active = comp_obj
+
+        bpy.context.scene.frame_set(2)
+
+        #bpy.ops.object.select_all(action='DESELECT')
+        #for pose in pose_objects:
+        #    pose.select_set(True)
+        #bpy.ops.object.delete()
 
     # item
     
-    #item_objects = []
-#
-    #if apply_pose == True:
-    #    item_lefthand = -1
-    #    item_righthand = -1
-    #    if(composition_data_founded["Pawn_LeftHandID"] != ""):
-    #        item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
-    #    if(composition_data_founded["Pawn_RightHandID"] != ""):
-    #        item_righthand = round(composition_data_founded["Pawn_RightHandID"])
-#
-    #    def apply_item(item_id, attach_bone):
-    #        res_founded = get_resource_data(resource_data, item_id, "Item")
-    #        item_filepath = os.path.abspath(os.path.join(base_dir, "input", res_founded["FilePath"]))
-    #        bpy.ops.import_scene.fbx( filepath = item_filepath )
-    #        item_objects.extend(bpy.context.selected_objects[:])
-    #        for item_obj in item_objects:
-    #            item_obj.scale = (res_founded["Scale"], res_founded["Scale"], res_founded["Scale"])
-#
-    #    if item_lefthand != -1:
-    #        apply_item(item_lefthand, "")
-#
-    #    if item_righthand != -1:
-    #        apply_item(item_righthand, "")
-#
-    #bpy.ops.object.select_all(action='DESELECT')
+    item_objects = []
+
+    if apply_pose == True:
+
+        item_lefthand = -1
+        item_righthand = -1
+        if(composition_data_founded["Pawn_LeftHandID"] != ""):
+            item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
+        if(composition_data_founded["Pawn_RightHandID"] != ""):
+            item_righthand = round(composition_data_founded["Pawn_RightHandID"])
+
+        def apply_item(item_id, attach_bone):
+            bpy.ops.object.select_all(action='DESELECT')
+            res_founded = get_resource_data(resource_data, item_id, "Prop")
+            item_filepath = os.path.abspath(os.path.join(base_dir, "data", "input", res_founded["FilePath"]))
+            bpy.ops.import_scene.fbx( filepath = item_filepath )
+            #better_fbx.fuck_fbx(bpy.context, item_filepath)
+            current_item_objects = bpy.context.selected_objects[:]
+            item_objects.extend(current_item_objects)
+            if(res_founded["Scale"] != ""):
+                for item_obj in current_item_objects:
+                    item_obj.scale = (float(res_founded["Scale"]), float(res_founded["Scale"]), float(res_founded["Scale"]))
+
+            item_obj = current_item_objects[0]
+            #for item_obj in current_item_objects:
+            #bpy.context.view_layer.objects.active = item_obj
+            #print(item_obj)
+            #c = item_obj.constraints.new(type='CHILD_OF')
+            #print("111111111111111111111111111111")
+            #c.target = bpy.data.objects["Bip001.005"]
+            #print(armature_obj)
+            #c.subtarget = attach_bone
+            #print(attach_bone)
+            bpy.ops.object.select_all(action='DESELECT')
+            armature_obj.select_set(True)
+            bone_matrix = armature_obj.matrix_world @ armature_obj.pose.bones[attach_bone].matrix
+            item_obj.location = bone_matrix.to_translation()
+            item_obj.rotation_euler = bone_matrix.to_euler()
+
+
+
+
+        if item_lefthand != -1:
+            apply_item(item_lefthand, "b_LWeapon")
+
+        if item_righthand != -1:
+            apply_item(item_righthand, "b_RWeapon")
+
+
+    bpy.ops.object.select_all(action='DESELECT')
+
+    for item_obj in item_objects:
+        item_obj.select_set(True)
 
     for comp_obj in component_objects:
         comp_obj.select_set(True)
-    #for item_obj in item_objects:
-    #    item_obj.select_set(True)
     
     return True
 

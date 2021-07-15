@@ -80,3 +80,28 @@ Render Tools about NFT Project
 
 	Whole :
 		output/whole/ "Whole_" + [UniqueID].png
+		
+## Docker Usage
+### Build
+```
+docker build . -t renderjob 
+```
+
+### Run
+```bash
+export ROOT=$(pwd)
+docker run -v $ROOT/../data:/data -it renderjob bash "./scripts/test_run_pawn.sh"
+```
+
+OR 
+
+```bash
+export ROOT=$(pwd)
+docker run -v $ROOT/data:/data -it --name renderjob renderjob
+
+docker exec -it renderjob bash
+
+# in container
+blender -b -P main.py -- 1 "{\"tokenId\" : 0,\"id\" : 0,\"hat\" : -1,\"head\" : 1,\"jacket\" : 2,\"trousers\" : 3,\"shoes\" : 4,\"tyOKpe\" : -1}"
+
+```

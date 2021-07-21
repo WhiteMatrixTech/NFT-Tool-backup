@@ -102,6 +102,10 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
     for obj in component_objects:
         if obj.type != "MESH":
             continue
+        bpy.ops.object.select_all(action='DESELECT')
+        obj.select_set(True)
+        bpy.context.view_layer.objects.active = obj
+        bpy.ops.mesh.customdata_custom_splitnormals_clear()
         generic_mat = bpy.data.materials.get("GenericMaterial").copy()
         if obj.data.materials:
             using_mat = obj.data.materials[0]
@@ -111,6 +115,8 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
             generic_mat.node_tree.nodes["Image Texture"].image = using_tex
             obj.data.materials[0] = generic_mat
 
+    bpy.ops.object.select_all(action='DESELECT')
+    
     # pose 
 
     if apply_pose == True:
@@ -167,7 +173,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
             bpy.ops.object.select_all(action='DESELECT')
             res_founded = get_resource_data(resource_data, item_id, "Prop")
             item_filepath = os.path.abspath(os.path.join(base_dir, "data", "input", res_founded["FilePath"]))
-            bpy.ops.import_scene.fbx( filepath = item_filepath )
+            bpy.ops.import_scene.fbx( filepath = item_filepath, automatic_bone_orientation = True, force_connect_children = True  )
             #better_fbx.fuck_fbx(bpy.context, item_filepath)
             current_item_objects = bpy.context.selected_objects[:]
             item_objects.extend(current_item_objects)

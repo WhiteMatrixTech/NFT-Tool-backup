@@ -2,6 +2,8 @@ import bpy
 import sys
 import os
 import json
+import math
+import mathutils
 #import better_fbx
 
 TYPE_PAWN = "Pawn"
@@ -143,6 +145,7 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
         for comp_obj in component_objects:
             if comp_obj.type == "ARMATURE":
+                comp_obj.scale = (10, 10, 10)
                 comp_obj.animation_data_clear()
                 if(comp_obj.animation_data == None):
                     comp_obj.animation_data_create()
@@ -297,7 +300,16 @@ def export_picture(export_filepath, resolution_2d):
     bpy.ops.render.render(write_still=True)
 
 def export_model(export_filepath):
-    bpy.ops.export_scene.gltf(filepath = export_filepath, use_selection = True, export_materials = 'EXPORT', export_animations = False, export_current_frame = True, export_skins = True)
+    bpy.ops.export_scene.gltf(filepath = export_filepath
+        #, export_format='GLTF_EMBEDDED'
+        , use_selection = True, export_materials = 'EXPORT', export_animations = False, export_current_frame = True, export_skins = True)
+
+def set_background_image(image_filepath):
+    img = bpy.data.images.load(image_filepath)
+    tree = bpy.context.scene.node_tree
+    image_node = tree.nodes["Image"]
+    image_node.image = img
+
 
 
 def main(argv):
@@ -355,9 +367,22 @@ def main(argv):
             resolution_2d = global_config["Resolution"][TYPE_PAWN]
             export_picture(pawn_picture_filepath, resolution_2d)
 
-            
+            # 7.27 addtional pic with no pose 
+            if (output_mode == 1):
+                bpy.context.scene.frame_set(1)
 
-    
+                
+                res_founded = get_resource_data(resource_data, pawn_param["backGround"], "Image")
+                img_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
+                set_background_image(img_filepath)
+
+                pawn_picture_filename = TYPE_PAWN + "_" + str(pawn_param["tokenId"]) + "_np.png"
+                pawn_picture_filepath = os.path.join(pawn_dir, pawn_picture_filename)
+                resolution_2d = global_config["Resolution"][TYPE_PAWN]
+                export_picture(pawn_picture_filepath, resolution_2d)
+
+
+            
     if (output_mode == 2):
         composite_param = input_param
         if check_composite_param(composite_param) == False :

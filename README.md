@@ -27,7 +27,8 @@ Render Tools about NFT Project
 	"jacket" : 0,
 	"trousers" : 0,
 	"shoes" : 0,
-	"type" : 0
+	"type" : 0,
+	"backGround" : 0
 }
 ```
 	
@@ -38,6 +39,7 @@ Render Tools about NFT Project
 	trousers : Component ID
 	shoes : Component ID
 	type : Component ID
+	backGround : BackGround Texture ID
 
 	[Note] when COMPONENT_ID == -1, this component will be ignored
 

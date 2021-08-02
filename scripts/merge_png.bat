@@ -1,1 +1,3 @@
-.\blender\blender.exe -b -P merge_png.py -- fuck 10000 10001 10002 10003
+cd..\
+.\blender\blender.exe -b -P merge_png.py --
+pause

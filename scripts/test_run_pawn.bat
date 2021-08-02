@@ -1,1 +1,1 @@
-.\blender\blender.exe -b -P main.py -- 1 "{\"tokenId\" : 0,\"id\" : 1,\"hat\" : 0,\"head\" : 75,\"jacket\" : 108,\"trousers\" : 138,\"shoes\" : 168,\"type\" : 300}"
+.\blender\blender.exe -b -P main.py -- 1 "{\"tokenId\" : 0,\"id\" : 1,\"hat\" : 46,\"head\" : 83,\"jacket\" : 134,\"trousers\" : 170,\"shoes\" : 195,\"type\" : 251,\"backGround\" : 800}"

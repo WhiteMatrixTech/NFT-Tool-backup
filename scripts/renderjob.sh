@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-setup_aws_cli.sh
+# check if the volume is initialized
+if [ ! -d "/data/input" ]; then
+    echo "/data/input folder does not exist, please finish the setup first!"
+fi
 
-sync_data.sh
+# execute the rendering job
+echo "execute the rendering job"
+blender -b -P /main.py -- "$@"

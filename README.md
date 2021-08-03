@@ -104,6 +104,6 @@ docker run -v $ROOT/data:/data -it --name renderjob renderjob
 docker exec -it renderjob bash
 
 # in container
-blender -b -P main.py -- 1 "{\"tokenId\" : 0,\"id\" : 0,\"hat\" : -1,\"head\" : 1,\"jacket\" : 2,\"trousers\" : 3,\"shoes\" : 4,\"tyOKpe\" : -1}"
+blender -b -P main.py -- 1 "{\"tokenId\" : 0,\"id\" : 0,\"hat\" : -1,\"head\" : 1,\"jacket\" : 2,\"trousers\" : 3,\"shoes\" : 4,\"type\" : -1}"
 
 ```

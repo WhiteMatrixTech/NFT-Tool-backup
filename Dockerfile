@@ -7,8 +7,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN ./aws/install
 
-# COPY ./blender/2.93/scripts/addons/better_fbx /bin/2.93/scripts/addons/better_fbx
-
 COPY . .
 
 RUN rm -rf /blender
@@ -18,4 +16,3 @@ RUN chmod -R 755 scripts
 ENV PATH="/scripts:${PATH}"
 
 CMD ["/bin/sh", "-c", "echo 'sleep infinity' | bash"]
-# CMD ["renderjob.sh"]

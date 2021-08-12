@@ -372,7 +372,7 @@ def main(argv):
                 bpy.context.scene.frame_set(1)
 
                 
-                res_founded = get_resource_data(resource_data, pawn_param["backGround"], "Image")
+                res_founded = get_resource_data(resource_data, pawn_param["background"], "Image")
                 img_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
                 set_background_image(img_filepath)
 

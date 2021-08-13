@@ -17,14 +17,14 @@ composite_data_format = ["target", "pawns"]
 base_dir = os.path.dirname(os.path.abspath(__file__))
 data_dir = os.path.join(base_dir, 'data')
 
-Mark all scene devices as GPU for cycles
+# Mark all scene devices as GPU for cycles
 bpy.context.scene.cycles.device = 'GPU'
 
 print("---------------   SCENE LIST   ---------------")
 for scene in bpy.data.scenes:
     print(scene.name)
     scene.cycles.device = 'GPU'
-    # scene.render.resolution_percentage = 200
+    # scene.render.resolution_percentage = 200 
     # scene.cycles.samples = 128
 
 # Enable CUDA

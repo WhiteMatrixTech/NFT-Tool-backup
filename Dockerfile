@@ -19,5 +19,4 @@ RUN rm -rf /blender
 
 RUN chmod -R 755 scripts
 
-
-CMD ["/bin/sh", "-c", "echo 'sleep infinity' | bash"]
+CMD ["start-runner.sh"]

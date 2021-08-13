@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dataclass-csv = "*"
+pandas = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+normalizedata = "python normalize_file_name_suffix.py"
+generate = "python generate_random_pawn.py"

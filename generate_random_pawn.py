@@ -311,5 +311,5 @@ if __name__ == '__main__':
                 log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.png'.format(generated_nft['id'], generated_nft['tokenId']))
                 log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.glb'.format(generated_nft['id'], generated_nft['tokenId']))
                 log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}_np.png'.format(generated_nft['id'], generated_nft['tokenId']))
-
+                counter += 1
 

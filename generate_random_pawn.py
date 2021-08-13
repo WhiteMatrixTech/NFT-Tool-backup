@@ -294,22 +294,27 @@ if __name__ == '__main__':
     counter = 1
 
     log_file_name = 'logs_{}_to_{}.txt'.format(from_number, to_number)
+    generated_nfts = []
 
+    # generate all
     for location_id in sorted(location_id_sig_map.keys()):
-        if from_number <= counter <= to_number:
-            sigs = location_id_sig_map[location_id]
-            for sig in sigs:
-                generated_nft = generate_nft_appearance_from_signature(sig, int(location_id), combo_manager,
-                                                                       prob_manager)
-                nft_string = json.dumps(generated_nft)
-                print('rendering for {}'.format(nft_string))
-                cmd = 'renderjob.sh 1 {} --cycle-device CUDA'.format(json.dumps(nft_string))
-                result = subprocess.run(cmd, shell=True, stderr=sys.stderr, stdout=sys.stdout)
-                print('rendering result for {}:'.format(nft_string))
-                print(result)
+        # if from_number <= counter <= to_number:
+        sigs = location_id_sig_map[location_id]
+        for sig in sigs:
+            generated_nft = generate_nft_appearance_from_signature(sig, location_id, combo_manager, prob_manager)
+            generated_nfts.append(generated_nft)
 
-                log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.png'.format(generated_nft['id'], generated_nft['tokenId']))
-                log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.glb'.format(generated_nft['id'], generated_nft['tokenId']))
-                log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}_np.png'.format(generated_nft['id'], generated_nft['tokenId']))
-                counter += 1
+    # render specific range
+    nft_to_render = generated_nfts[from_number-1:to_number]
+    for nft_info in nft_to_render:
+        nft_string = json.dumps(nft_info)
+        print('rendering for {}'.format(nft_string))
+        cmd = 'renderjob.sh 1 {} --cycle-device CUDA'.format(json.dumps(nft_string))
+        result = subprocess.run(cmd, shell=True, stderr=sys.stderr, stdout=sys.stdout)
+        print('rendering result for {}:'.format(nft_string))
+        print(result)
+
+        log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.png'.format(nft_info['id'], nft_info['tokenId']))
+        log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.glb'.format(nft_info['id'], nft_info['tokenId']))
+        log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}_np.png'.format(nft_info['id'], nft_info['tokenId']))
 

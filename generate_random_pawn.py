@@ -5,6 +5,7 @@ import numpy as np
 from dataclass_csv import DataclassReader
 import json
 import subprocess
+from pathlib import Path
 
 
 @dataclass
@@ -264,30 +265,51 @@ def generate_nft_appearance_from_signature(signature, location_id, combo_manager
     }
 
 
+def log_file_exists(log_file_name, file_to_check):
+    file_path = Path(file_to_check)
+    with open(log_file_name, 'a') as f:
+        if file_path.is_file():
+            f.write("{} exists\n".format(file_path))
+        else:
+            f.write("{} not found\n".format(file_path))
+
+
 if __name__ == '__main__':
     combo_manager = provide_combo_manager()
     prob_manager = provide_prob_manager('./fusion_config_08_12.csv')
 
-    from_location_id = int(sys.argv[1])  # inclusive
-    to_location_id = int(sys.argv[2])  # inclusive
+    from_number = int(sys.argv[1])  # inclusive
+    to_number = int(sys.argv[2])  # inclusive
 
-    print('rendering from {} to {}'.format(from_location_id, to_location_id))
+    print('rendering from {} to {}'.format(from_number, to_number))
 
     with open('locationIdSignatureStockInfo.json') as f:
         location_id_sig_json = json.load(f)
-        location_id_sig_map = {}
-        for location_id_str in location_id_sig_json:
-            location_id = int(location_id_str)
-            location_id_sig_map[location_id] = location_id_sig_json[location_id_str]
-        for location_id in sorted(location_id_sig_map.keys()):
-            if from_location_id <= location_id <= to_location_id:
-                sigs = location_id_sig_map[location_id]
-                for sig in sigs:
-                    generated_nft = generate_nft_appearance_from_signature(sig, int(location_id), combo_manager,
-                                                                           prob_manager)
-                    nft_string = json.dumps(generated_nft)
-                    print('rendering for {}'.format(nft_string))
-                    cmd = 'renderjob.sh 1 {} --cycle-device CUDA'.format(json.dumps(nft_string))
-                    result = subprocess.run(cmd, shell=True, stderr=sys.stderr, stdout=sys.stdout)
-                    print('rendering result for {}:'.format(nft_string))
-                    print(result)
+
+    location_id_sig_map = {}
+    for location_id_str in location_id_sig_json:
+        location_id = int(location_id_str)
+        location_id_sig_map[location_id] = location_id_sig_json[location_id_str]
+
+    counter = 1
+
+    log_file_name = 'logs_{}_to_{}.txt'.format(from_number, to_number)
+
+    for location_id in sorted(location_id_sig_map.keys()):
+        if from_number <= counter <= to_number:
+            sigs = location_id_sig_map[location_id]
+            for sig in sigs:
+                generated_nft = generate_nft_appearance_from_signature(sig, int(location_id), combo_manager,
+                                                                       prob_manager)
+                nft_string = json.dumps(generated_nft)
+                print('rendering for {}'.format(nft_string))
+                cmd = 'renderjob.sh 1 {} --cycle-device CUDA'.format(json.dumps(nft_string))
+                result = subprocess.run(cmd, shell=True, stderr=sys.stderr, stdout=sys.stdout)
+                print('rendering result for {}:'.format(nft_string))
+                print(result)
+
+                log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.png'.format(generated_nft['id'], generated_nft['tokenId']))
+                log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.glb'.format(generated_nft['id'], generated_nft['tokenId']))
+                log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}_np.png'.format(generated_nft['id'], generated_nft['tokenId']))
+
+

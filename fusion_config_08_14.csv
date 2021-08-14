@@ -1,0 +1,266 @@
+﻿globalId,resourceName,probability,type,rarity,hairColor,exclusiveGroupIds,description
+0,Cloudy Updo 1,50,Hat,n,1,"1,13,14,15,16,17,18,19",凌云髻1
+1,Cloudy Updo 2,0,Hat,n,1,,凌云髻2
+2,Cloudy Updo 3,0,Hat,n,1,,凌云髻3
+3,Cloudy Updo 4,0,Hat,n,1,,凌云髻4
+4,Cloudy Updo 5,0,Hat,n,1,,凌云髻5
+5,Cloudy Updo 6,0,Hat,n,1,,凌云髻6
+6,Double Hair Updo 1,50,Hat,n,1,"1,13,14,15,16,17,18,19",双丫髻1
+7,Double Hair Updo 2,0,Hat,n,1,,双丫髻2
+8,Double Hair Updo 3,0,Hat,n,1,,双丫髻3
+9,Double Hair Updo 4,0,Hat,n,1,,双丫髻4
+10,Double Hair Updo 5,0,Hat,n,1,,双丫髻5
+11,Double Hair Updo 6,0,Hat,n,1,,双丫髻6
+12,Flag head,50,Hat,n,,"1,13,14,15,16,17,19",旗头
+13,Red phoenix crown,80,Hat,r,,"1,13,14,15,16,17,18,19",红色凤冠
+14,Golden phoenix crown,80,Hat,r,,"1,13,14,15,16,17,18,19",金色凤冠
+15,Blue phoenix crown,80,Hat,r,,"1,13,14,15,16,17,18,19",蓝色凤冠
+16,Top hat,50,Hat,n,,"2,13,14,15,16,17,19",低礼帽
+17,Top hat,50,Hat,n,,"2,13,14,15,16,17,19",高礼帽
+18,Long Winged Officer Hat,80,Hat,r,,"3,13,14,15,16,17,19",长翅官帽
+19,Buddha halo,80,Hat,r,,"4,13,14,16,17,18,19",佛光
+20,Silk thread towel,80,Hat,r,,"5,13,14,15,16,17,18,19",纶巾
+21,Pavilion headwear 1,80,Hat,r,1,"6,13,14,15,16,17,19",楼阁头饰
+22,Pavilion headwear 2,0,Hat,r,1,,
+23,Pavilion headwear 3,0,Hat,r,1,,
+24,Pavilion headwear 4,0,Hat,r,1,,
+25,Pavilion headwear 5,0,Hat,r,1,,
+26,Pavilion headwear 6,0,Hat,r,1,,
+27,Winged Cap,50,Hat,n,,"3,13,14,15,16,17,18,19",頍冠
+28,A14_HAT_touguan2,50,Hat,n,,"3,13,14,15,16,17,19",獬豸冠
+29,A15_HAT_touguan3,50,Hat,n,,"3,13,14,15,16,17,19",貂禅冠
+30,A16_HAT_touguan4,50,Hat,n,,"3,13,14,15,16,17,19",进贤冠
+31,A17_HAT_faji,50,Hat,n,,"7,13,14,15,16,17,19",道士帽
+32,Imperial crown,150,Hat,sr,,"8,13,14,15,16,17,19",帝王头冠
+33,Plum (potted plant),80,Hat,r,,"9,13,14,15,16,17,19",梅（盆栽）
+34,Orchid (potted plant),80,Hat,r,,"9,13,14,15,16,17,19",兰（盆栽）
+35,Bamboo (potted plant),80,Hat,r,,"9,13,14,15,16,17,19",竹（盆栽）
+36,Chrysanthemum (potted plant),80,Hat,r,,"9,13,14,15,16,17,19",菊（盆栽）
+37,centre parting 1,80,Hat,n,1,"10,13,14,15,16,17,18,19",中分
+38,centre parting 2,0,Hat,n,1,,
+39,centre parting 3,0,Hat,n,1,,
+40,centre parting 4,0,Hat,n,1,,
+41,centre parting 5,0,Hat,n,1,,
+42,centre parting 6,0,Hat,n,1,,
+43,Tilted frisette 1,80,Hat,n,1,"10,13,14,15,16,17,18,19",斜分
+44,Tilted frisette 2,0,Hat,n,1,,
+45,Tilted frisette 3,0,Hat,n,1,,
+46,Tilted frisette 4,0,Hat,n,1,,
+47,Tilted frisette 5,0,Hat,n,1,,
+48,Tilted frisette 6,0,Hat,n,1,,
+49,Double tail 1,80,Hat,n,1,"1,13,14,15,16,17,18,19",双马尾
+50,Double tail 2,0,Hat,n,1,,
+51,Double tail 3,0,Hat,n,1,,
+52,Double tail 4,0,Hat,n,1,,
+53,Double tail 5,0,Hat,n,1,,
+54,Double tail 6,0,Hat,n,1,,
+55,Single ponytail 1,80,Hat,n,1,"1,13,14,15,16,17,18,19",单马尾
+56,Single ponytail 2,0,Hat,n,1,,
+57,Single ponytail 3,0,Hat,n,1,,
+58,Single ponytail 4,0,Hat,n,1,,
+59,Single ponytail 5,0,Hat,n,1,,
+60,Single ponytail 6,0,Hat,n,1,,
+61,Crown,150,Hat,sr,,"8,16",王冠
+62,Bamboo hat 1,150,Hat,sr,1,"11,13,14,15,16,17,19",斗笠
+63,Bamboo hat 2,0,Hat,sr,1,,
+64,Bamboo hat 3,0,Hat,sr,1,,
+60,Bamboo hat 4,0,Hat,sr,1,,
+66,Bamboo hat 5,0,Hat,sr,1,,
+67,Bamboo hat 6,0,Hat,sr,1,,
+68,Miao silver 1,150,Hat,sr,1,"1,13,14,15,16,17,18,19",苗族头饰
+69,Miao silver 2,0,Hat,sr,1,,
+70,Miao silver 3,0,Hat,sr,1,,
+71,Miao silver 4,0,Hat,sr,1,,
+72,Miao silver 5,0,Hat,sr,1,,
+73,Miao silver 6,0,Hat,sr,1,,
+74,Helmet,150,Hat,sr,,"12,14,15,16,17,19",头盔
+75,Facial design of Beijing opera 1,5,Head,n,,13,花脸谱
+76,Facial design of Beijing opera 2,5,Head,n,,13,花脸谱
+77,Facial design of Beijing opera 3,5,Head,n,,13,花脸谱
+78,Facial design of Beijing opera 4,5,Head,n,,13,花脸谱
+79,Facial design of Beijing opera 5,5,Head,n,,13,花脸谱
+80,Facial design of Beijing opera 6,5,Head,n,,13,花脸谱
+81,Facial design of Beijing opera 7,20,Head,r,,13,花脸谱
+82,Facial design of Beijing opera 8,20,Head,r,,13,花脸谱
+83,Facial design of Beijing opera 9,20,Head,sr,,13,花脸谱
+84,Facial design of Beijing opera 10,20,Head,sr,,13,花脸谱
+85,Kirin,200,Head,sr,,14,麒麟
+86,Buddha,200,Head,sr,,15,释迦摩尼
+87,Teapot,20,Head,n,,16,茶壶
+88,Vup,20,Head,n,,16,茶杯
+89,Steamed bun,20,Head,n,,17,馒头
+90,Steamed stuffed bun,20,Head,n,,17,包子
+91,Dumplings,20,Head,n,,17,水饺
+92,A barrel,5,Head,n,,18,一筒
+93,Two barrels,5,Head,n,,18,二筒
+94,Three barrels,5,Head,n,,18,三筒
+95,Four barrels,5,Head,n,,18,四筒
+96,Five barrels,5,Head,n,,18,五筒
+97,Six barrels,5,Head,n,,18,六筒
+98,Seven barrels,20,Head,r,,18,七筒
+99,Eight barrels,20,Head,r,,18,八筒
+100,Nine barrels,20,Head,sr,,18,九筒
+101,Noodle,20,Head,n,,17,面条
+102,Rice,20,Head,n,,17,米饭
+103,Rice dumpling,20,Head,n,,17,粽子
+104,Chinese dragon,20,Head,n,,19,中国龙
+105,Dazed expression 1,410,Head,n,1,,发呆表情
+106,Dazed expression 2,0,Head,n,1,,
+107,Dazed expression 3,0,Head,n,1,,
+108,Dazed expression 4,0,Head,n,1,,
+109,Dazed expression 5,0,Head,n,1,,
+110,Dazed expression 6,0,Head,n,1,,
+111,Smiley face 1,350,Head,n,1,20,笑脸表情
+112,Smiley face 2,0,Head,n,1,,
+113,Smiley face 3,0,Head,n,1,,
+114,Smiley face 4,0,Head,n,1,,
+115,Smiley face 5,0,Head,n,1,,
+116,Smiley face 6,0,Head,n,1,,
+117,Embarrassed expression 1,920,Head,r,1,20,尴尬表情
+118,Embarrassed expression 2,0,Head,r,1,,
+119,Embarrassed expression 3,0,Head,r,1,,
+120,Embarrassed expression 4,0,Head,r,1,,
+121,Embarrassed expression 5,0,Head,r,1,,
+122,Embarrassed expression 6,0,Head,r,1,,
+123,Surprised expression 1,540,Head,sr,1,20,惊讶表情
+124,Surprised expression 2,0,Head,sr,1,,
+125,Surprised expression 3,0,Head,sr,1,,
+126,Surprised expression 4,0,Head,sr,1,,
+127,Surprised expression 5,0,Head,sr,1,,
+128,Surprised expression 6,0,Head,sr,1,,
+129,Black coat,60,Jacket,n,,,黑外套
+130,Red coat,60,Jacket,n,,,红外套
+131,Black and green jacket,80,Jacket,n,,,黑绿外套
+132,Green jacket,80,Jacket,r,,,绿外套
+133,Pink coat,120,Jacket,r,,,粉外套
+134,Blue coat,200,Jacket,sr,,,蓝外套
+135,Red contrast jacket,60,Jacket,n,,,红色撞色夹克
+136,Blue contrast jacket,80,Jacket,n,,,蓝色撞色夹克
+137,Green contrast jacket,60,Jacket,n,,,绿色撞色夹克
+138,Purple Contrast Jacket,80,Jacket,r,,,紫色撞色夹克
+139,Dark blue contrast jacket,120,Jacket,r,,,深蓝撞色夹克
+140,Orange contrast jacket,200,Jacket,sr,,,橙色撞色夹克
+141,Dark blue sweater,80,Jacket,n,,,深蓝卫衣
+142,Deep Purple Sweatshirt,60,Jacket,n,,,深紫卫衣
+143,Dark red sweater,60,Jacket,n,,,暗红卫衣
+144,Dark green sweater,80,Jacket,r,,,墨绿卫衣
+145,Dark gray sweater,120,Jacket,r,,,深灰卫衣
+146,Dark Green Sweatshirt,200,Jacket,sr,,,深绿卫衣
+147,Sky blue color matching short sleeves,60,Jacket,n,,,天蓝拼色短袖
+148,Off-white color matching short sleeves,60,Jacket,n,,,米白拼色短袖
+149,Green color matching short sleeves,80,Jacket,n,,,嫩绿拼色短袖
+150,Light green color matching short sleeves,80,Jacket,r,,,浅绿拼色短袖
+151,Light blue color matching short sleeves,120,Jacket,r,,,浅蓝拼色短袖
+152,Lavender color matching short sleeves,200,Jacket,sr,,,淡紫拼色短袖
+153,Brown jacket,60,Jacket,n,,,棕色夹克
+154,Dark green jacket,80,Jacket,n,,,深绿夹克
+155,Light green jacket,60,Jacket,n,,,浅绿夹克
+156,Red jacket,80,Jacket,r,,,红色夹克
+157,Blue jacket,120,Jacket,r,,,蓝色夹克
+158,Purple jacket,200,Jacket,sr,,,紫色夹克
+159,Black trousers,60,Trousers,n,,,黑色长裤
+160,Orange trousers,60,Trousers,n,,,橙色长裤
+161,Rose red trousers,80,Trousers,n,,,玫红长裤
+162,Sky blue trousers,80,Trousers,r,,,天蓝长裤
+163,Purple trousers,120,Trousers,r,,,紫色长裤
+164,Grey trousers,200,Trousers,sr,,,灰色长裤
+165,Grey striped pants,60,Trousers,n,,,灰色条纹裤
+166,Yellow-green striped pants,80,Trousers,n,,,黄绿条纹裤
+167,Blue and white striped pants,60,Trousers,n,,,蓝白条纹裤
+168,Fuchsia Striped Pants,80,Trousers,r,,,紫红条纹裤
+169,Blue striped pants,120,Trousers,r,,,蓝色条纹裤
+170,Brown striped pants,200,Trousers,sr,,,棕色条纹裤
+171,Grey overalls,80,Trousers,n,,,灰色工装裤
+172,Khaki overalls,60,Trousers,n,,,卡其工装裤
+173,Blue and Green Cargo Pants,60,Trousers,n,,,蓝绿工装裤
+174,Blue Grey Cargo Pants,80,Trousers,r,,,蓝灰工装裤
+175,Blue and white overalls,120,Trousers,r,,,蓝白工装裤
+176,Purple overalls,200,Trousers,sr,,,紫色工装裤
+177,Black functional pants,60,Trousers,n,,,黑色机能裤
+178,Blue functional pants,60,Trousers,n,,,蓝色机能裤
+179,Pink functional pants,80,Trousers,n,,,粉色机能裤
+180,Purple functional pants,80,Trousers,r,,,紫色机能裤
+181,Green functional pants,120,Trousers,r,,,绿色机能裤
+182,Pink and green functional pants,200,Trousers,sr,,,粉绿机能裤
+183,Black shorts,60,Trousers,n,,,黑色短裤
+184,Green shorts,80,Trousers,n,,,绿色短裤
+185,Denim shorts,60,Trousers,n,,,牛仔短裤
+186,Light yellow shorts,80,Trousers,r,,,浅黄短裤
+187,Orange shorts,120,Trousers,r,,,橘色短裤
+188,Sky blue shorts,200,Trousers,sr,,,天蓝短裤
+189,Red sandals,30,Shoes,n,,,红色凉鞋
+190,Green sandals,30,Shoes,n,,,绿色凉鞋
+191,Blue sandals,40,Shoes,n,,,蓝色凉鞋
+192,Grey sandals,40,Shoes,r,,,灰色凉鞋
+193,Khaki sandals,60,Shoes,r,,,卡其凉鞋
+194,Pink sandals,100,Shoes,sr,,,粉色凉鞋
+195,Red boots,30,Shoes,n,,,红色靴子
+196,Green boots,40,Shoes,n,,,绿色靴子
+197,Blue boots,30,Shoes,n,,,蓝色靴子
+198,White boots,40,Shoes,r,,,白色靴子
+199,Orange boots,60,Shoes,r,,,橙色靴子
+200,Yellow boots,100,Shoes,sr,,,黄色靴子
+201,Orange basketball shoes,40,Shoes,n,,,橙色篮球鞋
+202,Green basketball shoes,30,Shoes,n,,,绿色篮球鞋
+203,Blue basketball shoes,30,Shoes,n,,,蓝色篮球鞋
+204,Sky blue basketball shoes,40,Shoes,r,,,天蓝篮球鞋
+205,Light green basketball shoes,60,Shoes,r,,,浅绿篮球鞋
+206,Pink basketball shoes,100,Shoes,sr,,,粉色篮球鞋
+207,Red leather shoes,30,Shoes,n,,,红色皮鞋
+208,Green leather shoes,30,Shoes,n,,,绿色皮鞋
+209,Blue and gray leather shoes,40,Shoes,n,,,蓝灰皮鞋
+210,Yellow leather shoes,40,Shoes,r,,,土黄皮鞋
+211,Brown leather shoes,60,Shoes,r,,,棕色皮鞋
+212,Pink leather shoes,100,Shoes,sr,,,粉色皮鞋
+213,Grey skate shoes,30,Shoes,n,,,灰色滑板鞋
+214,Brown skate shoes,40,Shoes,n,,,棕色滑板鞋
+215,Red skate shoes,30,Shoes,n,,,红色滑板鞋
+216,Retro style skate shoes,40,Shoes,r,,,复古风滑板鞋
+217,Turquoise skateboard shoes,60,Shoes,r,,,绿松石滑板鞋
+218,Zijin Dynasty Skate Shoes,100,Shoes,sr,,,紫金王朝滑板鞋
+219,Gypsy tooling shoes,30,Shoes,n,,,吉普赛工装鞋
+220,Void Tooling Shoes,30,Shoes,n,,,虚空工装鞋
+221,Mamba tooling shoes,40,Shoes,n,,,曼巴工装鞋
+222,Macaron tooling shoes,40,Shoes,r,,,马卡龙工装鞋
+223,Night City Tooling Shoes,60,Shoes,r,,,夜之城工装鞋
+224,Heat tooling shoes,100,Shoes,sr,,,热火工装鞋
+225,Blue and black boots,30,Shoes,n,,,蓝黑长靴
+226,Red and blue boots,40,Shoes,n,,,红蓝长靴
+227,Blue and Green Boots,30,Shoes,n,,,蓝绿长靴
+228,Eskimo boots,40,Shoes,r,,,爱斯基摩长靴
+229,Novice Boots,60,Shoes,r,,,初号机长靴
+230,Ice cream boots,100,Shoes,sr,,,冰淇淋长靴
+231,Grey Martin Boots,40,Shoes,n,,,灰色马丁靴
+232,Brown Martin Boots,30,Shoes,n,,,棕色马丁靴
+233,Orange Martin Boots,30,Shoes,n,,,橘红色马丁靴
+234,Purple Martin Boots,40,Shoes,r,,,紫色马丁靴
+235,Summer Martin Boots,60,Shoes,r,,,夏日马丁靴
+236,Martin Boots,100,Shoes,sr,,,初号机马丁靴
+237,Pink and white beach shoes,30,Shoes,n,,,粉白沙滩鞋
+238,Summer beach shoes,30,Shoes,n,,,夏日沙滩鞋
+239,Red and blue beach shoes,40,Shoes,n,,,红蓝沙滩鞋
+240,Ice cream beach shoes,40,Shoes,r,,,冰淇淋沙滩鞋
+241,Blue and purple beach shoes,60,Shoes,r,,,蓝紫沙滩鞋
+242,Tropical beach shoes,100,Shoes,sr,,,热带沙滩鞋
+243,Dark brown army boots,30,Shoes,n,,,深棕色军靴
+244,Light brown army boots,40,Shoes,n,,,浅棕色军靴
+245,Purple Sweet Potato Military Boots,30,Shoes,n,,,紫薯精军靴
+246,Macaron Army Boots,40,Shoes,r,,,马卡龙军靴
+247,Avocado Army Boots,60,Shoes,r,,,牛油果军靴
+248,Night City Army Boots,100,Shoes,sr,,,夜之城军靴
+249,Human 1,400,Type,n,,,人类1
+250,Human 2,300,Type,n,,,人类2
+251,Human 3,300,Type,n,,,人类3
+252,Human 4,500,Type,r,,,人类4
+253,Ghost,500,Type,r,,,亡灵
+254,Zombie,1000,Type,sr,,,兽人
+800,Base map 1,145,Image,na,,,底图1
+801,Base map 2,145,Image,na,,,底图2
+802,Base map 3,145,Image,na,,,底图3
+803,Base map 4,145,Image,na,,,底图4
+804,Base map 5,140,Image,na,,,底图5
+805,Base map 6,140,Image,na,,,底图6
+806,Base map 7,140,Image,na,,,底图7
+807,None,180,Hat,n,0,,无
+808,None,120,Hat,r,0,,无
+809,None,250,Hat,sr,0,,无

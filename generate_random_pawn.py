@@ -167,12 +167,12 @@ class ProbManager:
     def __init__(self, component_infos):
         self.rarity_type_prob_map = {}
         self.type_to_hat_offset_map = {
-            'X01_body_Type1': 0,
-            'X02_body_Type2': 1,
-            'X03_body_Type3': 2,
-            'X04_body_Type4': 3,
-            'X05_body_Type5': 4,
-            'X06_body_Type6': 5,
+            'Human 1': 0,
+            'Human 2': 1,
+            'Human 3': 2,
+            'Human 4': 3,
+            'Ghost': 4,
+            'Zombie': 5,
         }
         for component_info in component_infos:
             key = self.build_key(component_info.rarity, component_info.type)
@@ -187,10 +187,10 @@ class ProbManager:
     def build_key(rarity, component_type):
         return rarity + '-' + component_type
 
-    def resolve_hat_component(self, type_info, hat_info):
-        if hat_info.hairColor == 0:
-            return hat_info.globalId
-        return hat_info.globalId + self.type_to_hat_offset_map[type_info.resourceName]
+    def resolve_hat_or_head_component(self, type_info, hat_or_head_info):
+        if hat_or_head_info.hairColor == 0:
+            return hat_or_head_info.globalId
+        return hat_or_head_info.globalId + self.type_to_hat_offset_map[type_info.resourceName]
 
     def get_prob_info_pair_array(self, rarity, type):
         return self.rarity_type_prob_map[self.build_key(rarity, type)]
@@ -256,8 +256,8 @@ def generate_nft_appearance_from_signature(signature, location_id, combo_manager
         'tokenId': signature,
         'id': location_id,
         'type': generated_components[0].globalId,
-        'hat': prob_manager.resolve_hat_component(generated_components[0], generated_components[1]),
-        'head': generated_components[2].globalId,
+        'hat': prob_manager.resolve_hat_or_head_component(generated_components[0], generated_components[1]),
+        'head': prob_manager.resolve_hat_or_head_component(generated_components[0], generated_components[2]),
         'jacket': generated_components[3].globalId,
         'trousers': generated_components[4].globalId,
         'shoes': generated_components[5].globalId,
@@ -276,12 +276,11 @@ def log_file_exists(log_file_name, file_to_check):
 
 if __name__ == '__main__':
     combo_manager = provide_combo_manager()
-    prob_manager = provide_prob_manager('./fusion_config_08_12.csv')
+    prob_manager = provide_prob_manager('./fusion_config_08_14.csv')
 
     from_number = int(sys.argv[1])  # inclusive
     to_number = int(sys.argv[2])  # inclusive
-
-    print('rendering from {} to {}'.format(from_number, to_number))
+    generate_json_only = bool(sys.argv[3])
 
     with open('locationIdSignatureStockInfo.json') as f:
         location_id_sig_json = json.load(f)
@@ -293,28 +292,41 @@ if __name__ == '__main__':
 
     counter = 1
 
-    log_file_name = 'logs_{}_to_{}.txt'.format(from_number, to_number)
     generated_nfts = []
 
     # generate all
     for location_id in sorted(location_id_sig_map.keys()):
-        # if from_number <= counter <= to_number:
         sigs = location_id_sig_map[location_id]
         for sig in sigs:
             generated_nft = generate_nft_appearance_from_signature(sig, location_id, combo_manager, prob_manager)
             generated_nfts.append(generated_nft)
 
-    # render specific range
-    nft_to_render = generated_nfts[from_number-1:to_number]
-    for nft_info in nft_to_render:
-        nft_string = json.dumps(nft_info)
-        print('rendering for {}'.format(nft_string))
-        cmd = 'renderjob.sh 1 {} --cycle-device CUDA'.format(json.dumps(nft_string))
-        result = subprocess.run(cmd, shell=True, stderr=sys.stderr, stdout=sys.stdout)
-        print('rendering result for {}:'.format(nft_string))
-        print(result)
+    if generate_json_only:
+        print('only generate a appearance.json file')
+        with open("appearance.json", "w") as json_file:
+            appearances = []
+            for nft in generated_nfts:
+                appearance = nft.copy()
+                appearance['signature'] = nft['tokenId']
+                appearance.pop('tokenId')
+                appearance.pop('id')
+                appearances.append(appearance)
+            json.dump(appearances, json_file)
+    else:
+        # render specific range
+        print('rendering from {} to {}'.format(from_number, to_number))
+        log_file_name = 'logs_{}_to_{}.txt'.format(from_number, to_number)
 
-        log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.png'.format(nft_info['id'], nft_info['tokenId']))
-        log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.glb'.format(nft_info['id'], nft_info['tokenId']))
-        log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}_np.png'.format(nft_info['id'], nft_info['tokenId']))
+        nft_to_render = generated_nfts[from_number-1:to_number]
+        for nft_info in nft_to_render:
+            nft_string = json.dumps(nft_info)
+            print('rendering for {}'.format(nft_string))
+            cmd = 'renderjob.sh 1 {} --cycle-device CUDA'.format(json.dumps(nft_string))
+            result = subprocess.run(cmd, shell=True, stderr=sys.stderr, stdout=sys.stdout)
+            print('rendering result for {}:'.format(nft_string))
+            print(result)
+
+            log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.png'.format(nft_info['id'], nft_info['tokenId']))
+            log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}.glb'.format(nft_info['id'], nft_info['tokenId']))
+            log_file_exists(log_file_name, 'data/output/pawn/{}/Pawn_{}_np.png'.format(nft_info['id'], nft_info['tokenId']))
 

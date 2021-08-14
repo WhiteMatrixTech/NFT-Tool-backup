@@ -280,7 +280,9 @@ if __name__ == '__main__':
 
     from_number = int(sys.argv[1])  # inclusive
     to_number = int(sys.argv[2])  # inclusive
-    generate_json_only = bool(sys.argv[3])
+    generate_json_only = 'true' == sys.argv[3].lower()
+
+    print("generate_json_only: ", generate_json_only)
 
     with open('locationIdSignatureStockInfo.json') as f:
         location_id_sig_json = json.load(f)

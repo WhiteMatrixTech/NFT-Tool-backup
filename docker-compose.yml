@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nft-media-service:
+    container_name: nft-renderer
+    restart: always
+    image: whitematrixlab/nft-renderer
+    networks:
+      - nft-net
+    volumes:
+      - ./data:/data
+networks:
+  nft-net:
+    driver: bridge

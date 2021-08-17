@@ -1,263 +1,263 @@
-﻿globalId,resourceName,probability,type,rarity,hairColor,exclusiveGroupIds,description
-0,Cloudy bun1,60,Hat,n,1,"1,13,14,15,16,17,18,19",凌云髻1
-1,Cloudy bun2,0,Hat,n,1,,凌云髻2
-2,Cloudy bun3,0,Hat,n,1,,凌云髻3
-3,Cloudy bun4,0,Hat,n,1,,凌云髻4
-4,Cloudy bun5,0,Hat,n,1,,凌云髻5
-5,Cloudy bun6,0,Hat,n,1,,凌云髻6
-6,Double hair bun,60,Hat,n,1,"1,13,14,15,16,17,18,19",双丫髻1
-7,Double hair bun,0,Hat,n,1,,双丫髻2
-8,Double hair bun,0,Hat,n,1,,双丫髻3
-9,Double hair bun,0,Hat,n,1,,双丫髻4
-10,Double hair bun,0,Hat,n,1,,双丫髻5
-11,Double hair bun,0,Hat,n,1,,双丫髻6
-12,A03_HAT_nvxingfashi3,60,Hat,n,,"1,13,14,15,16,17,18,19",旗头
-13,A04_HAT_xifutoushi1,90,Hat,r,,"1,13,14,15,16,17,18,19",红色凤冠
-14,A05_HAT_xifutoushi2,90,Hat,r,,"1,13,14,15,16,17,18,19",金色凤冠
-15,A06_HAT_xifutoushi3,90,Hat,r,,"1,13,14,15,16,17,18,19",蓝色凤冠
-16,A07_HAT_gaodinglimao,60,Hat,n,,"2,13,14,15,16,17",低礼帽
-17,A08_HAT_gaolimao,60,Hat,n,,"2,13,14,15,16,17",高礼帽
-18,A09_HAT_songdaiguanmao,90,Hat,r,,"3,15,16,17",长翅官帽
-19,A10_HAT_foguangyuanpan,90,Hat,r,,"4,13,14,16,17,18,19",佛光圆盘
-20,A11_HAT_chushimao,90,Hat,r,,"5,13,14,15,16,17",纶巾
-21,A12_HAT_xiaolougetoushi,90,Hat,r,1,"6,13,16,17",楼阁头饰
-22,A12_HAT_xiaolougetoushi-2,0,Hat,r,1,,
-23,A12_HAT_xiaolougetoushi-3,0,Hat,r,1,,
-24,A12_HAT_xiaolougetoushi-4,0,Hat,r,1,,
-25,A12_HAT_xiaolougetoushi-5,0,Hat,r,1,,
-26,A12_HAT_xiaolougetoushi-6,0,Hat,r,1,,
-27,A13_HAT_touguan1,60,Hat,n,,"3,15,16,17",頍冠
-28,A14_HAT_touguan2,60,Hat,n,,"3,15,16,17",獬豸冠
-29,A15_HAT_touguan3,60,Hat,n,,"3,15,16,17",貂禅冠
-30,A16_HAT_touguan4,60,Hat,n,,"3,15,16,17",进贤冠
-31,A17_HAT_faji,60,Hat,n,,"7,13,14,15,16,17",道士帽
-32,A18_HAT_diwangtouguan,200,Hat,sr,,8,帝王头冠
-33,A19_HAT_mei,90,Hat,r,,"9,13,15",梅（盆栽）
-34,A20_HAT_lan,90,Hat,r,,"9,13,15",兰（盆栽）
-35,A21_HAT_zhu,90,Hat,r,,"9,13,15",竹（盆栽）
-36,A22_HAT_ju,100,Hat,r,,"9,13,15",菊（盆栽）
-37,A23_HAT_zhongfen,100,Hat,n,1,"10,13,14,15,16,17,18,19",中分
-38,A23_HAT_zhongfen-2,0,Hat,n,1,,
-39,A23_HAT_zhongfen-3,0,Hat,n,1,,
-40,A23_HAT_zhongfen-4,0,Hat,n,1,,
-41,A23_HAT_zhongfen-5,0,Hat,n,1,,
-42,A23_HAT_zhongfen-6,0,Hat,n,1,,
-43,A24_HAT_xiefen,100,Hat,n,1,"10,13,14,15,16,17,18,19",斜分
-44,A24_HAT_xiefen-2,0,Hat,n,1,,
-45,A24_HAT_xiefen-3,0,Hat,n,1,,
-46,A24_HAT_xiefen-4,0,Hat,n,1,,
-47,A24_HAT_xiefen-5,0,Hat,n,1,,
-48,A24_HAT_xiefen-6,0,Hat,n,1,"1,13,14,15,16,17,18,19",双马尾
-49,A25_HAT_gaoshuangmawei,100,Hat,n,1,,
-50,A25_HAT_gaoshuangmawei-2,0,Hat,n,1,,
-51,A25_HAT_gaoshuangmawei-3,0,Hat,n,1,,
-52,A25_HAT_gaoshuangmawei-4,0,Hat,n,1,,
-53,A25_HAT_gaoshuangmawei-5,0,Hat,n,1,,
-54,A25_HAT_gaoshuangmawei-6,0,Hat,n,1,,
-55,A26_HAT_gaodanmawei,100,Hat,n,1,"1,13,14,15,16,17,18,19",单马尾
-56,A26_HAT_gaodanmawei-2,0,Hat,n,1,,
-57,A26_HAT_gaodanmawei-3,0,Hat,n,1,,
-58,A26_HAT_gaodanmawei-4,0,Hat,n,1,,
-59,A26_HAT_gaodanmawei-5,0,Hat,n,1,,
-60,A26_HAT_gaodanmawei-6,0,Hat,n,1,,
-61,A27_HAT_daxingwangguan,200,Hat,sr,,"8,16",王冠
-62,A28_HAT_douli,200,Hat,sr,1,"11,13,14,15,16,17,19",斗笠
-63,A28_HAT_douli-2,0,Hat,sr,1,,
-64,A28_HAT_douli-3,0,Hat,sr,1,,
-60,A28_HAT_douli-4,0,Hat,sr,1,,
-66,A28_HAT_douli-5,0,Hat,sr,1,,
-67,A28_HAT_douli-6,0,Hat,sr,1,,
-68,A29_HAT_miaozufushi,200,Hat,sr,1,"1,13,14,15,16,17,18,19",苗族头饰
-69,A29_HAT_miaozufushi-2,0,Hat,sr,1,,
-70,A29_HAT_miaozufushi-3,0,Hat,sr,1,,
-71,A29_HAT_miaozufushi-4,0,Hat,sr,1,,
-72,A29_HAT_miaozufushi-5,0,Hat,sr,1,,
-73,A29_HAT_miaozufushi-6,0,Hat,sr,1,,
-74,A30_HAT_zhongshitoukui,200,Hat,sr,,"12,14,15,16,17,19",头盔
-75,A31_HEAD_lianpu1,5,Head,n,,13,花脸谱
-76,A32_HEAD_lianpu2,5,Head,n,,13,花脸谱
-77,A33_HEAD_lianpu3,5,Head,n,,13,花脸谱
-78,A34_HEAD_lianpu4,5,Head,n,,13,花脸谱
-79,A35_HEAD_lianpu5,5,Head,n,,13,花脸谱
-80,A36_HEAD_lianpu6,5,Head,n,,13,花脸谱
-81,A37_HEAD_lianpu7,20,Head,r,,13,花脸谱
-82,A38_HEAD_lianpu8,20,Head,r,,13,花脸谱
-83,A39_HEAD_lianpu9,20,Head,sr,,13,花脸谱
-84,A40_HEAD_lianpu10,20,Head,sr,,13,花脸谱
-85,A41_HEAD_qilin,200,Head,sr,,14,麒麟
-86,A42_HEAD_shijiamouni,200,Head,sr,,15,释迦摩尼
-87,A43_HEAD_chahu,20,Head,n,,16,茶壶
-88,A44_HEAD_chabei,20,Head,n,,16,茶杯
-89,A45_HEAD_mantou,20,Head,n,,17,馒头
-90,A46_HEAD_baozi,20,Head,n,,17,包子
-91,A47_HEAD_shuijiao,20,Head,n,,17,水饺
-92,A48_HEAD_1tong,5,Head,n,,18,一筒
-93,A49_HEAD_2tong,5,Head,n,,18,二筒
-94,A50_HEAD_3tong,5,Head,n,,18,三筒
-95,A51_HEAD_4tong,5,Head,n,,18,四筒
-96,A52_HEAD_5tong,5,Head,n,,18,五筒
-97,A53_HEAD_6tong,5,Head,n,,18,六筒
-98,A54_HEAD_7tong,20,Head,r,,18,七筒
-99,A55_HEAD_8tong,20,Head,r,,18,八筒
-100,A56_HEAD_9tong,20,Head,sr,,18,九筒
-101,A57_HEAD_miantiao,20,Head,n,,17,面条
-102,A58_HEAD_mifan,20,Head,n,,17,米饭
-103,A59_HEAD_zongzi,20,Head,n,,17,粽子
-104,A60_HEAD_zhongguol,20,Head,n,,19,中国龙
-105,A64_HEAD_normal,410,Head,n,1,,发呆表情
-106,A64_HEAD_normal-2,0,Head,n,1,,
-107,A64_HEAD_normal-3,0,Head,n,1,,
-108,A64_HEAD_normal-4,0,Head,n,1,,
-109,A64_HEAD_normal-5,0,Head,n,1,,
-110,A64_HEAD_normal-6,0,Head,n,1,,
-111,A61_HEAD_face1,350,Head,n,1,20,笑脸表情
-112,A61_HEAD_face1-2,0,Head,n,1,,
-113,A61_HEAD_face1-3,0,Head,n,1,,
-114,A61_HEAD_face1-4,0,Head,n,1,,
-115,A61_HEAD_face1-5,0,Head,n,1,,
-116,A61_HEAD_face1-6,0,Head,n,1,,
-117,A62_HEAD_face2,920,Head,r,1,20,尴尬表情
-118,A62_HEAD_face2-2,0,Head,r,1,,
-119,A62_HEAD_face2-3,0,Head,r,1,,
-120,A62_HEAD_face2-4,0,Head,r,1,,
-121,A62_HEAD_face2-5,0,Head,r,1,,
-122,A62_HEAD_face2-6,0,Head,r,1,,
-123,A63_HEAD_face3,540,Head,sr,1,20,惊讶表情
-124,A63_HEAD_face3-2,0,Head,sr,1,,
-125,A63_HEAD_face3-3,0,Head,sr,1,,
-126,A63_HEAD_face3-4,0,Head,sr,1,,
-127,A63_HEAD_face3-5,0,Head,sr,1,,
-128,A63_HEAD_face3-6,0,Head,sr,1,,
-129,B01_JACKET_yifu1_1,60,Jacket,n,,,黑外套
-130,B02_JACKET_yifu1_2,60,Jacket,n,,,红外套
-131,B03_JACKET_yifu1_3,80,Jacket,n,,,黑绿外套
-132,B04_JACKET_yifu1_4,80,Jacket,r,,,绿外套
-133,B05_JACKET_yifu1_5,120,Jacket,r,,,粉外套
-134,B06_JACKET_yifu1_6,200,Jacket,sr,,,蓝外套
-135,B07_JACKET_yifu2_1,60,Jacket,n,,,红色撞色夹克
-136,B08_JACKET_yifu2_2,80,Jacket,n,,,蓝色撞色夹克
-137,B09_JACKET_yifu2_3,60,Jacket,n,,,绿色撞色夹克
-138,B10_JACKET_yifu2_4,80,Jacket,r,,,紫色撞色夹克
-139,B11_JACKET_yifu2_5,120,Jacket,r,,,深蓝撞色夹克
-140,B12_JACKET_yifu2_6,200,Jacket,sr,,,橙色撞色夹克
-141,B13_JACKET_yifu3_1,80,Jacket,n,,,深蓝卫衣
-142,B14_JACKET_yifu3_2,60,Jacket,n,,,深紫卫衣
-143,B15_JACKET_yifu3_3,60,Jacket,n,,,暗红卫衣
-144,B16_JACKET_yifu3_4,80,Jacket,r,,,墨绿卫衣
-145,B17_JACKET_yifu3_5,120,Jacket,r,,,深灰卫衣
-146,B18_JACKET_yifu3_6,200,Jacket,sr,,,深绿卫衣
-147,B19_JACKET_yifu4_1,60,Jacket,n,,,天蓝拼色短袖
-148,B20_JACKET_yifu4_2,60,Jacket,n,,,米白拼色短袖
-149,B21_JACKET_yifu4_3,80,Jacket,n,,,嫩绿拼色短袖
-150,B22_JACKET_yifu4_4,80,Jacket,r,,,浅绿拼色短袖
-151,B23_JACKET_yifu4_5,120,Jacket,r,,,浅蓝拼色短袖
-152,B24_JACKET_yifu4_6,200,Jacket,sr,,,淡紫拼色短袖
-153,B25_JACKET_yifu5_1,60,Jacket,n,,,棕色夹克
-154,B26_JACKET_yifu5_2,80,Jacket,n,,,深绿夹克
-155,B27_JACKET_yifu5_3,60,Jacket,n,,,浅绿夹克
-156,B28_JACKET_yifu5_4,80,Jacket,r,,,红色夹克
-157,B29_JACKET_yifu5_5,120,Jacket,r,,,蓝色夹克
-158,B30_JACKET_yifu5_6,200,Jacket,sr,,,紫色夹克
-159,C01_Trousers_kuzi1_1,60,Trousers,n,,,黑色长裤
-160,C02_Trousers_kuzi1_2,60,Trousers,n,,,橙色长裤
-161,C03_Trousers_kuzi1_3,80,Trousers,n,,,玫红长裤
-162,C04_Trousers_kuzi1_4,80,Trousers,r,,,天蓝长裤
-163,C05_Trousers_kuzi1_5,120,Trousers,r,,,紫色长裤
-164,C06_Trousers_kuzi1_6,200,Trousers,sr,,,灰色长裤
-165,C07_Trousers_kuzi2_1,60,Trousers,n,,,灰色条纹裤
-166,C08_Trousers_kuzi2_2,80,Trousers,n,,,黄绿条纹裤
-167,C09_Trousers_kuzi2_3,60,Trousers,n,,,蓝白条纹裤
-168,C10_Trousers_kuzi2_4,80,Trousers,r,,,紫红条纹裤
-169,C11_Trousers_kuzi2_5,120,Trousers,r,,,蓝色条纹裤
-170,C12_Trousers_kuzi2_6,200,Trousers,sr,,,棕色条纹裤
-171,C13_Trousers_kuzi3_1,80,Trousers,n,,,灰色工装裤
-172,C14_Trousers_kuzi3_2,60,Trousers,n,,,卡其工装裤
-173,C15_Trousers_kuzi3_3,60,Trousers,n,,,蓝绿工装裤
-174,C16_Trousers_kuzi3_4,80,Trousers,r,,,蓝灰工装裤
-175,C17_Trousers_kuzi3_5,120,Trousers,r,,,蓝白工装裤
-176,C18_Trousers_kuzi3_6,200,Trousers,sr,,,紫色工装裤
-177,C19_Trousers_kuzi4_1,60,Trousers,n,,,黑色机能裤
-178,C20_Trousers_kuzi4_2,60,Trousers,n,,,蓝色机能裤
-179,C21_Trousers_kuzi4_3,80,Trousers,n,,,粉色机能裤
-180,C22_Trousers_kuzi4_4,80,Trousers,r,,,紫色机能裤
-181,C23_Trousers_kuzi4_5,120,Trousers,r,,,绿色机能裤
-182,C24_Trousers_kuzi4_6,200,Trousers,sr,,,粉绿机能裤
-183,C25_Trousers_kuzi5_1,60,Trousers,n,,,黑色短裤
-184,C26_Trousers_kuzi5_2,80,Trousers,n,,,绿色短裤
-185,C27_Trousers_kuzi5_3,60,Trousers,n,,,牛仔短裤
-186,C28_Trousers_kuzi5_4,80,Trousers,r,,,浅黄短裤
-187,C29_Trousers_kuzi5_5,120,Trousers,r,,,橘色短裤
-188,C30_Trousers_kuzi5_6,200,Trousers,sr,,,天蓝短裤
-189,D01_SHOE_xiezi1_1,30,Shoes,n,,,红色凉鞋
-190,D02_SHOE_xiezi1_2,30,Shoes,n,,,绿色凉鞋
-191,D03_SHOE_xiezi1_3,40,Shoes,n,,,蓝色凉鞋
-192,D04_SHOE_xiezi1_4,40,Shoes,r,,,灰色凉鞋
-193,D05_SHOE_xiezi1_5,60,Shoes,r,,,卡其凉鞋
-194,D06_SHOE_xiezi1_6,100,Shoes,sr,,,粉色凉鞋
-195,D07_SHOE_xiezi2_1,30,Shoes,n,,,红色靴子
-196,D08_SHOE_xiezi2_2,40,Shoes,n,,,绿色靴子
-197,D09_SHOE_xiezi2_3,30,Shoes,n,,,蓝色靴子
-198,D10_SHOE_xiezi2_4,40,Shoes,r,,,白色靴子
-199,D11_SHOE_xiezi2_5,60,Shoes,r,,,橙色靴子
-200,D12_SHOE_xiezi2_6,100,Shoes,sr,,,黄色靴子
-201,D13_SHOE_xiezi3_1,40,Shoes,n,,,橙色篮球鞋
-202,D14_SHOE_xiezi3_2,30,Shoes,n,,,绿色篮球鞋
-203,D15_SHOE_xiezi3_3,30,Shoes,n,,,蓝色篮球鞋
-204,D16_SHOE_xiezi3_4,40,Shoes,r,,,天蓝篮球鞋
-205,D17_SHOE_xiezi3_5,60,Shoes,r,,,浅绿篮球鞋
-206,D18_SHOE_xiezi3_6,100,Shoes,sr,,,粉色篮球鞋
-207,D19_SHOE_xiezi4_1,30,Shoes,n,,,红色皮鞋
-208,D20_SHOE_xiezi4_2,30,Shoes,n,,,绿色皮鞋
-209,D21_SHOE_xiezi4_3,40,Shoes,n,,,蓝灰皮鞋
-210,D22_SHOE_xiezi4_4,40,Shoes,r,,,土黄皮鞋
-211,D23_SHOE_xiezi4_5,60,Shoes,r,,,棕色皮鞋
-212,D24_SHOE_xiezi4_6,100,Shoes,sr,,,粉色皮鞋
-213,D25_SHOE_xiezi5_1,30,Shoes,n,,,灰色滑板鞋
-214,D26_SHOE_xiezi5_2,40,Shoes,n,,,棕色滑板鞋
-215,D27_SHOE_xiezi5_3,30,Shoes,n,,,红色滑板鞋
-216,D28_SHOE_xiezi5_4,40,Shoes,r,,,复古风滑板鞋
-217,D29_SHOE_xiezi5_5,60,Shoes,r,,,绿松石滑板鞋
-218,D30_SHOE_xiezi5_6,100,Shoes,sr,,,紫金王朝滑板鞋
-219,D31_SHOE_xiezi6_1,30,Shoes,n,,,吉普赛工装鞋
-220,D32_SHOE_xiezi6_2,30,Shoes,n,,,虚空工装鞋
-221,D33_SHOE_xiezi6_3,40,Shoes,n,,,曼巴工装鞋
-222,D34_SHOE_xiezi6_4,40,Shoes,r,,,马卡龙工装鞋
-223,D35_SHOE_xiezi6_5,60,Shoes,r,,,夜之城工装鞋
-224,D36_SHOE_xiezi6_6,100,Shoes,sr,,,热火工装鞋
-225,D37_SHOE_xiezi7_1,30,Shoes,n,,,蓝黑长靴
-226,D38_SHOE_xiezi7_2,40,Shoes,n,,,红蓝长靴
-227,D39_SHOE_xiezi7_3,30,Shoes,n,,,蓝绿长靴
-228,D40_SHOE_xiezi7_4,40,Shoes,r,,,爱斯基摩长靴
-229,D41_SHOE_xiezi7_5,60,Shoes,r,,,初号机长靴
-230,D42_SHOE_xiezi7_6,100,Shoes,sr,,,冰淇淋长靴
-231,D43_SHOE_xiezi8_1,40,Shoes,n,,,灰色马丁靴
-232,D44_SHOE_xiezi8_2,30,Shoes,n,,,棕色马丁靴
-233,D45_SHOE_xiezi8_3,30,Shoes,n,,,橘红色马丁靴
-234,D46_SHOE_xiezi8_4,40,Shoes,r,,,紫色马丁靴
-235,D47_SHOE_xiezi8_5,60,Shoes,r,,,夏日马丁靴
-236,D48_SHOE_xiezi8_6,100,Shoes,sr,,,初号机马丁靴
-237,D49_SHOE_xiezi9_1,30,Shoes,n,,,粉白沙滩鞋
-238,D50_SHOE_xiezi9_2,30,Shoes,n,,,夏日沙滩鞋
-239,D51_SHOE_xiezi9_3,40,Shoes,n,,,红蓝沙滩鞋
-240,D52_SHOE_xiezi9_4,40,Shoes,r,,,冰淇淋沙滩鞋
-241,D53_SHOE_xiezi9_5,60,Shoes,r,,,蓝紫沙滩鞋
-242,D54_SHOE_xiezi9_6,100,Shoes,sr,,,热带沙滩鞋
-243,D55_SHOE_xiezi10_1,30,Shoes,n,,,深棕色军靴
-244,D56_SHOE_xiezi10_2,40,Shoes,n,,,浅棕色军靴
-245,D57_SHOE_xiezi10_3,30,Shoes,n,,,紫薯精军靴
-246,D58_SHOE_xiezi10_4,40,Shoes,r,,,马卡龙军靴
-247,D59_SHOE_xiezi10_5,60,Shoes,r,,,牛油果军靴
-248,D60_SHOE_xiezi10_6,100,Shoes,sr,,,夜之城军靴
-249,X01_body_Type1,400,Type,n,,,
-250,X02_body_Type2,300,Type,n,,,
-251,X03_body_Type3,300,Type,n,,,
-252,X04_body_Type4,500,Type,r,,,
-253,X05_body_Type5,500,Type,r,,,
-254,X06_body_Type6,1000,Type,sr,,,
-800,0-1.jpg,145,Image,na,,,
-801,0-2.jpg,145,Image,na,,,
-802,0-3.jpg,145,Image,na,,,
-803,0-4.jpg,145,Image,na,,,
-804,0-5.jpg,140,Image,na,,,
-805,0-6.jpg,140,Image,na,,,
-806,0-7.jpg,140,Image,na,,,
+﻿globalId,resourceName,probability,type,rarity,hairColor,exclusiveGroupIds,description,resourceNameOld
+0,Cloudy Updo 1,60,Hat,n,1,"1,13,14,15,16,17,18,19",凌云髻1,Cloudy bun1
+1,Cloudy Updo 2,0,Hat,n,1,,凌云髻2,Cloudy bun2
+2,Cloudy Updo 3,0,Hat,n,1,,凌云髻3,Cloudy bun3
+3,Cloudy Updo 4,0,Hat,n,1,,凌云髻4,Cloudy bun4
+4,Cloudy Updo 5,0,Hat,n,1,,凌云髻5,Cloudy bun5
+5,Cloudy Updo 6,0,Hat,n,1,,凌云髻6,Cloudy bun6
+6,Double Hair Updo 1,60,Hat,n,1,"1,13,14,15,16,17,18,19",双丫髻1,Double hair bun
+7,Double Hair Updo 2,0,Hat,n,1,,双丫髻2,Double hair bun
+8,Double Hair Updo 3,0,Hat,n,1,,双丫髻3,Double hair bun
+9,Double Hair Updo 4,0,Hat,n,1,,双丫髻4,Double hair bun
+10,Double Hair Updo 5,0,Hat,n,1,,双丫髻5,Double hair bun
+11,Double Hair Updo 6,0,Hat,n,1,,双丫髻6,Double hair bun
+12,Flag head,60,Hat,n,,"1,13,14,15,16,17,18,19",旗头,A03_HAT_nvxingfashi3
+13,Red phoenix crown,90,Hat,r,,"1,13,14,15,16,17,18,19",红色凤冠,A04_HAT_xifutoushi1
+14,Golden phoenix crown,90,Hat,r,,"1,13,14,15,16,17,18,19",金色凤冠,A05_HAT_xifutoushi2
+15,Blue phoenix crown,90,Hat,r,,"1,13,14,15,16,17,18,19",蓝色凤冠,A06_HAT_xifutoushi3
+16,Top hat,60,Hat,n,,"2,13,14,15,16,17",低礼帽,A07_HAT_gaodinglimao
+17,Top hat,60,Hat,n,,"2,13,14,15,16,17",高礼帽,A08_HAT_gaolimao
+18,Long Winged Officer Hat,90,Hat,r,,"3,15,16,17",长翅官帽,A09_HAT_songdaiguanmao
+19,Buddha halo,90,Hat,r,,"4,13,14,16,17,18,19",佛光圆盘,A10_HAT_foguangyuanpan
+20,Silk thread towel,90,Hat,r,,"5,13,14,15,16,17",纶巾,A11_HAT_chushimao
+21,Pavilion headwear 1,90,Hat,r,1,"6,13,16,17",楼阁头饰,A12_HAT_xiaolougetoushi
+22,Pavilion headwear 2,0,Hat,r,1,,,A12_HAT_xiaolougetoushi-2
+23,Pavilion headwear 3,0,Hat,r,1,,,A12_HAT_xiaolougetoushi-3
+24,Pavilion headwear 4,0,Hat,r,1,,,A12_HAT_xiaolougetoushi-4
+25,Pavilion headwear 5,0,Hat,r,1,,,A12_HAT_xiaolougetoushi-5
+26,Pavilion headwear 6,0,Hat,r,1,,,A12_HAT_xiaolougetoushi-6
+27,Winged Cap,60,Hat,n,,"3,15,16,17",頍冠,A13_HAT_touguan1
+28,A14_HAT_touguan2,60,Hat,n,,"3,15,16,17",獬豸冠,A14_HAT_touguan2
+29,A15_HAT_touguan3,60,Hat,n,,"3,15,16,17",貂禅冠,A15_HAT_touguan3
+30,A16_HAT_touguan4,60,Hat,n,,"3,15,16,17",进贤冠,A16_HAT_touguan4
+31,A17_HAT_faji,60,Hat,n,,"7,13,14,15,16,17",道士帽,A17_HAT_faji
+32,Imperial crown,200,Hat,sr,,8,帝王头冠,A18_HAT_diwangtouguan
+33,Plum (potted plant),90,Hat,r,,"9,13,15",梅（盆栽）,A19_HAT_mei
+34,Orchid (potted plant),90,Hat,r,,"9,13,15",兰（盆栽）,A20_HAT_lan
+35,Bamboo (potted plant),90,Hat,r,,"9,13,15",竹（盆栽）,A21_HAT_zhu
+36,Chrysanthemum (potted plant),100,Hat,r,,"9,13,15",菊（盆栽）,A22_HAT_ju
+37,centre parting 1,100,Hat,n,1,"10,13,14,15,16,17,18,19",中分,A23_HAT_zhongfen
+38,centre parting 2,0,Hat,n,1,,,A23_HAT_zhongfen-2
+39,centre parting 3,0,Hat,n,1,,,A23_HAT_zhongfen-3
+40,centre parting 4,0,Hat,n,1,,,A23_HAT_zhongfen-4
+41,centre parting 5,0,Hat,n,1,,,A23_HAT_zhongfen-5
+42,centre parting 6,0,Hat,n,1,,,A23_HAT_zhongfen-6
+43,Tilted frisette 1,100,Hat,n,1,"10,13,14,15,16,17,18,19",斜分,A24_HAT_xiefen
+44,Tilted frisette 2,0,Hat,n,1,,,A24_HAT_xiefen-2
+45,Tilted frisette 3,0,Hat,n,1,,,A24_HAT_xiefen-3
+46,Tilted frisette 4,0,Hat,n,1,,,A24_HAT_xiefen-4
+47,Tilted frisette 5,0,Hat,n,1,,,A24_HAT_xiefen-5
+48,Tilted frisette 6,0,Hat,n,1,"1,13,14,15,16,17,18,19",双马尾,A24_HAT_xiefen-6
+49,Double tail 1,100,Hat,n,1,,,A25_HAT_gaoshuangmawei
+50,Double tail 2,0,Hat,n,1,,,A25_HAT_gaoshuangmawei-2
+51,Double tail 3,0,Hat,n,1,,,A25_HAT_gaoshuangmawei-3
+52,Double tail 4,0,Hat,n,1,,,A25_HAT_gaoshuangmawei-4
+53,Double tail 5,0,Hat,n,1,,,A25_HAT_gaoshuangmawei-5
+54,Double tail 6,0,Hat,n,1,,,A25_HAT_gaoshuangmawei-6
+55,Single ponytail 1,100,Hat,n,1,"1,13,14,15,16,17,18,19",单马尾,A26_HAT_gaodanmawei
+56,Single ponytail 2,0,Hat,n,1,,,A26_HAT_gaodanmawei-2
+57,Single ponytail 3,0,Hat,n,1,,,A26_HAT_gaodanmawei-3
+58,Single ponytail 4,0,Hat,n,1,,,A26_HAT_gaodanmawei-4
+59,Single ponytail 5,0,Hat,n,1,,,A26_HAT_gaodanmawei-5
+60,Single ponytail 6,0,Hat,n,1,,,A26_HAT_gaodanmawei-6
+61,Crown,200,Hat,sr,,"8,16",王冠,A27_HAT_daxingwangguan
+62,Bamboo hat 1,200,Hat,sr,1,"11,13,14,15,16,17,19",斗笠,A28_HAT_douli
+63,Bamboo hat 2,0,Hat,sr,1,,,A28_HAT_douli-2
+64,Bamboo hat 3,0,Hat,sr,1,,,A28_HAT_douli-3
+65,Bamboo hat 4,0,Hat,sr,1,,,A28_HAT_douli-4
+66,Bamboo hat 5,0,Hat,sr,1,,,A28_HAT_douli-5
+67,Bamboo hat 6,0,Hat,sr,1,,,A28_HAT_douli-6
+68,Miao silver 1,200,Hat,sr,1,"1,13,14,15,16,17,18,19",苗族头饰,A29_HAT_miaozufushi
+69,Miao silver 2,0,Hat,sr,1,,,A29_HAT_miaozufushi-2
+70,Miao silver 3,0,Hat,sr,1,,,A29_HAT_miaozufushi-3
+71,Miao silver 4,0,Hat,sr,1,,,A29_HAT_miaozufushi-4
+72,Miao silver 5,0,Hat,sr,1,,,A29_HAT_miaozufushi-5
+73,Miao silver 6,0,Hat,sr,1,,,A29_HAT_miaozufushi-6
+74,Helmet,200,Hat,sr,,"12,14,15,16,17,19",头盔,A30_HAT_zhongshitoukui
+75,Facial design of Beijing opera 1,5,Head,n,,13,花脸谱,A31_HEAD_lianpu1
+76,Facial design of Beijing opera 2,5,Head,n,,13,花脸谱,A32_HEAD_lianpu2
+77,Facial design of Beijing opera 3,5,Head,n,,13,花脸谱,A33_HEAD_lianpu3
+78,Facial design of Beijing opera 4,5,Head,n,,13,花脸谱,A34_HEAD_lianpu4
+79,Facial design of Beijing opera 5,5,Head,n,,13,花脸谱,A35_HEAD_lianpu5
+80,Facial design of Beijing opera 6,5,Head,n,,13,花脸谱,A36_HEAD_lianpu6
+81,Facial design of Beijing opera 7,20,Head,r,,13,花脸谱,A37_HEAD_lianpu7
+82,Facial design of Beijing opera 8,20,Head,r,,13,花脸谱,A38_HEAD_lianpu8
+83,Facial design of Beijing opera 9,20,Head,sr,,13,花脸谱,A39_HEAD_lianpu9
+84,Facial design of Beijing opera 10,20,Head,sr,,13,花脸谱,A40_HEAD_lianpu10
+85,Kirin,200,Head,sr,,14,麒麟,A41_HEAD_qilin
+86,Buddha,200,Head,sr,,15,释迦摩尼,A42_HEAD_shijiamouni
+87,Teapot,20,Head,n,,16,茶壶,A43_HEAD_chahu
+88,Vup,20,Head,n,,16,茶杯,A44_HEAD_chabei
+89,Steamed bun,20,Head,n,,17,馒头,A45_HEAD_mantou
+90,Steamed stuffed bun,20,Head,n,,17,包子,A46_HEAD_baozi
+91,Dumplings,20,Head,n,,17,水饺,A47_HEAD_shuijiao
+92,A barrel,5,Head,n,,18,一筒,A48_HEAD_1tong
+93,Two barrels,5,Head,n,,18,二筒,A49_HEAD_2tong
+94,Three barrels,5,Head,n,,18,三筒,A50_HEAD_3tong
+95,Four barrels,5,Head,n,,18,四筒,A51_HEAD_4tong
+96,Five barrels,5,Head,n,,18,五筒,A52_HEAD_5tong
+97,Six barrels,5,Head,n,,18,六筒,A53_HEAD_6tong
+98,Seven barrels,20,Head,r,,18,七筒,A54_HEAD_7tong
+99,Eight barrels,20,Head,r,,18,八筒,A55_HEAD_8tong
+100,Nine barrels,20,Head,sr,,18,九筒,A56_HEAD_9tong
+101,Noodle,20,Head,n,,17,面条,A57_HEAD_miantiao
+102,Rice,20,Head,n,,17,米饭,A58_HEAD_mifan
+103,Rice dumpling,20,Head,n,,17,粽子,A59_HEAD_zongzi
+104,Chinese dragon,20,Head,n,,19,中国龙,A60_HEAD_zhongguol
+105,Dazed expression 1,410,Head,n,1,,发呆表情,A64_HEAD_normal
+106,Dazed expression 2,0,Head,n,1,,,A64_HEAD_normal-2
+107,Dazed expression 3,0,Head,n,1,,,A64_HEAD_normal-3
+108,Dazed expression 4,0,Head,n,1,,,A64_HEAD_normal-4
+109,Dazed expression 5,0,Head,n,1,,,A64_HEAD_normal-5
+110,Dazed expression 6,0,Head,n,1,,,A64_HEAD_normal-6
+111,Smiley face 1,350,Head,n,1,20,笑脸表情,A61_HEAD_face1
+112,Smiley face 2,0,Head,n,1,,,A61_HEAD_face1-2
+113,Smiley face 3,0,Head,n,1,,,A61_HEAD_face1-3
+114,Smiley face 4,0,Head,n,1,,,A61_HEAD_face1-4
+115,Smiley face 5,0,Head,n,1,,,A61_HEAD_face1-5
+116,Smiley face 6,0,Head,n,1,,,A61_HEAD_face1-6
+117,Embarrassed expression 1,920,Head,r,1,20,尴尬表情,A62_HEAD_face2
+118,Embarrassed expression 2,0,Head,r,1,,,A62_HEAD_face2-2
+119,Embarrassed expression 3,0,Head,r,1,,,A62_HEAD_face2-3
+120,Embarrassed expression 4,0,Head,r,1,,,A62_HEAD_face2-4
+121,Embarrassed expression 5,0,Head,r,1,,,A62_HEAD_face2-5
+122,Embarrassed expression 6,0,Head,r,1,,,A62_HEAD_face2-6
+123,Surprised expression 1,540,Head,sr,1,20,惊讶表情,A63_HEAD_face3
+124,Surprised expression 2,0,Head,sr,1,,,A63_HEAD_face3-2
+125,Surprised expression 3,0,Head,sr,1,,,A63_HEAD_face3-3
+126,Surprised expression 4,0,Head,sr,1,,,A63_HEAD_face3-4
+127,Surprised expression 5,0,Head,sr,1,,,A63_HEAD_face3-5
+128,Surprised expression 6,0,Head,sr,1,,,A63_HEAD_face3-6
+129,Black coat,60,Jacket,n,,,黑外套,B01_JACKET_yifu1_1
+130,Red coat,60,Jacket,n,,,红外套,B02_JACKET_yifu1_2
+131,Black and green jacket,80,Jacket,n,,,黑绿外套,B03_JACKET_yifu1_3
+132,Green jacket,80,Jacket,r,,,绿外套,B04_JACKET_yifu1_4
+133,Pink coat,120,Jacket,r,,,粉外套,B05_JACKET_yifu1_5
+134,Blue coat,200,Jacket,sr,,,蓝外套,B06_JACKET_yifu1_6
+135,Red contrast jacket,60,Jacket,n,,,红色撞色夹克,B07_JACKET_yifu2_1
+136,Blue contrast jacket,80,Jacket,n,,,蓝色撞色夹克,B08_JACKET_yifu2_2
+137,Green contrast jacket,60,Jacket,n,,,绿色撞色夹克,B09_JACKET_yifu2_3
+138,Purple Contrast Jacket,80,Jacket,r,,,紫色撞色夹克,B10_JACKET_yifu2_4
+139,Dark blue contrast jacket,120,Jacket,r,,,深蓝撞色夹克,B11_JACKET_yifu2_5
+140,Orange contrast jacket,200,Jacket,sr,,,橙色撞色夹克,B12_JACKET_yifu2_6
+141,Dark blue sweater,80,Jacket,n,,,深蓝卫衣,B13_JACKET_yifu3_1
+142,Deep Purple Sweatshirt,60,Jacket,n,,,深紫卫衣,B14_JACKET_yifu3_2
+143,Dark red sweater,60,Jacket,n,,,暗红卫衣,B15_JACKET_yifu3_3
+144,Dark green sweater,80,Jacket,r,,,墨绿卫衣,B16_JACKET_yifu3_4
+145,Dark gray sweater,120,Jacket,r,,,深灰卫衣,B17_JACKET_yifu3_5
+146,Dark Green Sweatshirt,200,Jacket,sr,,,深绿卫衣,B18_JACKET_yifu3_6
+147,Sky blue color matching short sleeves,60,Jacket,n,,,天蓝拼色短袖,B19_JACKET_yifu4_1
+148,Off-white color matching short sleeves,60,Jacket,n,,,米白拼色短袖,B20_JACKET_yifu4_2
+149,Green color matching short sleeves,80,Jacket,n,,,嫩绿拼色短袖,B21_JACKET_yifu4_3
+150,Light green color matching short sleeves,80,Jacket,r,,,浅绿拼色短袖,B22_JACKET_yifu4_4
+151,Light blue color matching short sleeves,120,Jacket,r,,,浅蓝拼色短袖,B23_JACKET_yifu4_5
+152,Lavender color matching short sleeves,200,Jacket,sr,,,淡紫拼色短袖,B24_JACKET_yifu4_6
+153,Brown jacket,60,Jacket,n,,,棕色夹克,B25_JACKET_yifu5_1
+154,Dark green jacket,80,Jacket,n,,,深绿夹克,B26_JACKET_yifu5_2
+155,Light green jacket,60,Jacket,n,,,浅绿夹克,B27_JACKET_yifu5_3
+156,Red jacket,80,Jacket,r,,,红色夹克,B28_JACKET_yifu5_4
+157,Blue jacket,120,Jacket,r,,,蓝色夹克,B29_JACKET_yifu5_5
+158,Purple jacket,200,Jacket,sr,,,紫色夹克,B30_JACKET_yifu5_6
+159,Black trousers,60,Trousers,n,,,黑色长裤,C01_Trousers_kuzi1_1
+160,Orange trousers,60,Trousers,n,,,橙色长裤,C02_Trousers_kuzi1_2
+161,Rose red trousers,80,Trousers,n,,,玫红长裤,C03_Trousers_kuzi1_3
+162,Sky blue trousers,80,Trousers,r,,,天蓝长裤,C04_Trousers_kuzi1_4
+163,Purple trousers,120,Trousers,r,,,紫色长裤,C05_Trousers_kuzi1_5
+164,Grey trousers,200,Trousers,sr,,,灰色长裤,C06_Trousers_kuzi1_6
+165,Grey striped pants,60,Trousers,n,,,灰色条纹裤,C07_Trousers_kuzi2_1
+166,Yellow-green striped pants,80,Trousers,n,,,黄绿条纹裤,C08_Trousers_kuzi2_2
+167,Blue and white striped pants,60,Trousers,n,,,蓝白条纹裤,C09_Trousers_kuzi2_3
+168,Fuchsia Striped Pants,80,Trousers,r,,,紫红条纹裤,C10_Trousers_kuzi2_4
+169,Blue striped pants,120,Trousers,r,,,蓝色条纹裤,C11_Trousers_kuzi2_5
+170,Brown striped pants,200,Trousers,sr,,,棕色条纹裤,C12_Trousers_kuzi2_6
+171,Grey overalls,80,Trousers,n,,,灰色工装裤,C13_Trousers_kuzi3_1
+172,Khaki overalls,60,Trousers,n,,,卡其工装裤,C14_Trousers_kuzi3_2
+173,Blue and Green Cargo Pants,60,Trousers,n,,,蓝绿工装裤,C15_Trousers_kuzi3_3
+174,Blue Grey Cargo Pants,80,Trousers,r,,,蓝灰工装裤,C16_Trousers_kuzi3_4
+175,Blue and white overalls,120,Trousers,r,,,蓝白工装裤,C17_Trousers_kuzi3_5
+176,Purple overalls,200,Trousers,sr,,,紫色工装裤,C18_Trousers_kuzi3_6
+177,Black functional pants,60,Trousers,n,,,黑色机能裤,C19_Trousers_kuzi4_1
+178,Blue functional pants,60,Trousers,n,,,蓝色机能裤,C20_Trousers_kuzi4_2
+179,Pink functional pants,80,Trousers,n,,,粉色机能裤,C21_Trousers_kuzi4_3
+180,Purple functional pants,80,Trousers,r,,,紫色机能裤,C22_Trousers_kuzi4_4
+181,Green functional pants,120,Trousers,r,,,绿色机能裤,C23_Trousers_kuzi4_5
+182,Pink and green functional pants,200,Trousers,sr,,,粉绿机能裤,C24_Trousers_kuzi4_6
+183,Black shorts,60,Trousers,n,,,黑色短裤,C25_Trousers_kuzi5_1
+184,Green shorts,80,Trousers,n,,,绿色短裤,C26_Trousers_kuzi5_2
+185,Denim shorts,60,Trousers,n,,,牛仔短裤,C27_Trousers_kuzi5_3
+186,Light yellow shorts,80,Trousers,r,,,浅黄短裤,C28_Trousers_kuzi5_4
+187,Orange shorts,120,Trousers,r,,,橘色短裤,C29_Trousers_kuzi5_5
+188,Sky blue shorts,200,Trousers,sr,,,天蓝短裤,C30_Trousers_kuzi5_6
+189,Red sandals,30,Shoes,n,,,红色凉鞋,D01_SHOE_xiezi1_1
+190,Green sandals,30,Shoes,n,,,绿色凉鞋,D02_SHOE_xiezi1_2
+191,Blue sandals,40,Shoes,n,,,蓝色凉鞋,D03_SHOE_xiezi1_3
+192,Grey sandals,40,Shoes,r,,,灰色凉鞋,D04_SHOE_xiezi1_4
+193,Khaki sandals,60,Shoes,r,,,卡其凉鞋,D05_SHOE_xiezi1_5
+194,Pink sandals,100,Shoes,sr,,,粉色凉鞋,D06_SHOE_xiezi1_6
+195,Red boots,30,Shoes,n,,,红色靴子,D07_SHOE_xiezi2_1
+196,Green boots,40,Shoes,n,,,绿色靴子,D08_SHOE_xiezi2_2
+197,Blue boots,30,Shoes,n,,,蓝色靴子,D09_SHOE_xiezi2_3
+198,White boots,40,Shoes,r,,,白色靴子,D10_SHOE_xiezi2_4
+199,Orange boots,60,Shoes,r,,,橙色靴子,D11_SHOE_xiezi2_5
+200,Yellow boots,100,Shoes,sr,,,黄色靴子,D12_SHOE_xiezi2_6
+201,Orange basketball shoes,40,Shoes,n,,,橙色篮球鞋,D13_SHOE_xiezi3_1
+202,Green basketball shoes,30,Shoes,n,,,绿色篮球鞋,D14_SHOE_xiezi3_2
+203,Blue basketball shoes,30,Shoes,n,,,蓝色篮球鞋,D15_SHOE_xiezi3_3
+204,Sky blue basketball shoes,40,Shoes,r,,,天蓝篮球鞋,D16_SHOE_xiezi3_4
+205,Light green basketball shoes,60,Shoes,r,,,浅绿篮球鞋,D17_SHOE_xiezi3_5
+206,Pink basketball shoes,100,Shoes,sr,,,粉色篮球鞋,D18_SHOE_xiezi3_6
+207,Red leather shoes,30,Shoes,n,,,红色皮鞋,D19_SHOE_xiezi4_1
+208,Green leather shoes,30,Shoes,n,,,绿色皮鞋,D20_SHOE_xiezi4_2
+209,Blue and gray leather shoes,40,Shoes,n,,,蓝灰皮鞋,D21_SHOE_xiezi4_3
+210,Yellow leather shoes,40,Shoes,r,,,土黄皮鞋,D22_SHOE_xiezi4_4
+211,Brown leather shoes,60,Shoes,r,,,棕色皮鞋,D23_SHOE_xiezi4_5
+212,Pink leather shoes,100,Shoes,sr,,,粉色皮鞋,D24_SHOE_xiezi4_6
+213,Grey skate shoes,30,Shoes,n,,,灰色滑板鞋,D25_SHOE_xiezi5_1
+214,Brown skate shoes,40,Shoes,n,,,棕色滑板鞋,D26_SHOE_xiezi5_2
+215,Red skate shoes,30,Shoes,n,,,红色滑板鞋,D27_SHOE_xiezi5_3
+216,Retro style skate shoes,40,Shoes,r,,,复古风滑板鞋,D28_SHOE_xiezi5_4
+217,Turquoise skateboard shoes,60,Shoes,r,,,绿松石滑板鞋,D29_SHOE_xiezi5_5
+218,Zijin Dynasty Skate Shoes,100,Shoes,sr,,,紫金王朝滑板鞋,D30_SHOE_xiezi5_6
+219,Gypsy tooling shoes,30,Shoes,n,,,吉普赛工装鞋,D31_SHOE_xiezi6_1
+220,Void Tooling Shoes,30,Shoes,n,,,虚空工装鞋,D32_SHOE_xiezi6_2
+221,Mamba tooling shoes,40,Shoes,n,,,曼巴工装鞋,D33_SHOE_xiezi6_3
+222,Macaron tooling shoes,40,Shoes,r,,,马卡龙工装鞋,D34_SHOE_xiezi6_4
+223,Night City Tooling Shoes,60,Shoes,r,,,夜之城工装鞋,D35_SHOE_xiezi6_5
+224,Heat tooling shoes,100,Shoes,sr,,,热火工装鞋,D36_SHOE_xiezi6_6
+225,Blue and black boots,30,Shoes,n,,,蓝黑长靴,D37_SHOE_xiezi7_1
+226,Red and blue boots,40,Shoes,n,,,红蓝长靴,D38_SHOE_xiezi7_2
+227,Blue and Green Boots,30,Shoes,n,,,蓝绿长靴,D39_SHOE_xiezi7_3
+228,Eskimo boots,40,Shoes,r,,,爱斯基摩长靴,D40_SHOE_xiezi7_4
+229,Novice Boots,60,Shoes,r,,,初号机长靴,D41_SHOE_xiezi7_5
+230,Ice cream boots,100,Shoes,sr,,,冰淇淋长靴,D42_SHOE_xiezi7_6
+231,Grey Martin Boots,40,Shoes,n,,,灰色马丁靴,D43_SHOE_xiezi8_1
+232,Brown Martin Boots,30,Shoes,n,,,棕色马丁靴,D44_SHOE_xiezi8_2
+233,Orange Martin Boots,30,Shoes,n,,,橘红色马丁靴,D45_SHOE_xiezi8_3
+234,Purple Martin Boots,40,Shoes,r,,,紫色马丁靴,D46_SHOE_xiezi8_4
+235,Summer Martin Boots,60,Shoes,r,,,夏日马丁靴,D47_SHOE_xiezi8_5
+236,Martin Boots,100,Shoes,sr,,,初号机马丁靴,D48_SHOE_xiezi8_6
+237,Pink and white beach shoes,30,Shoes,n,,,粉白沙滩鞋,D49_SHOE_xiezi9_1
+238,Summer beach shoes,30,Shoes,n,,,夏日沙滩鞋,D50_SHOE_xiezi9_2
+239,Red and blue beach shoes,40,Shoes,n,,,红蓝沙滩鞋,D51_SHOE_xiezi9_3
+240,Ice cream beach shoes,40,Shoes,r,,,冰淇淋沙滩鞋,D52_SHOE_xiezi9_4
+241,Blue and purple beach shoes,60,Shoes,r,,,蓝紫沙滩鞋,D53_SHOE_xiezi9_5
+242,Tropical beach shoes,100,Shoes,sr,,,热带沙滩鞋,D54_SHOE_xiezi9_6
+243,Dark brown army boots,30,Shoes,n,,,深棕色军靴,D55_SHOE_xiezi10_1
+244,Light brown army boots,40,Shoes,n,,,浅棕色军靴,D56_SHOE_xiezi10_2
+245,Purple Sweet Potato Military Boots,30,Shoes,n,,,紫薯精军靴,D57_SHOE_xiezi10_3
+246,Macaron Army Boots,40,Shoes,r,,,马卡龙军靴,D58_SHOE_xiezi10_4
+247,Avocado Army Boots,60,Shoes,r,,,牛油果军靴,D59_SHOE_xiezi10_5
+248,Night City Army Boots,100,Shoes,sr,,,夜之城军靴,D60_SHOE_xiezi10_6
+249,Human 1,400,Type,n,,,人类1,X01_body_Type1
+250,Human 2,300,Type,n,,,人类2,X02_body_Type2
+251,Human 3,300,Type,n,,,人类3,X03_body_Type3
+252,Human 4,500,Type,r,,,人类4,X04_body_Type4
+253,Ghost,500,Type,r,,,亡灵,X05_body_Type5
+254,Zombie,1000,Type,sr,,,兽人,X06_body_Type6
+800,Background 1,145,Image,na,,,底图1,0-1.jpg
+801,Background 2,145,Image,na,,,底图2,0-2.jpg
+802,Background 3,145,Image,na,,,底图3,0-3.jpg
+803,Background 4,145,Image,na,,,底图4,0-4.jpg
+804,Background 5,140,Image,na,,,底图5,0-5.jpg
+805,Background 6,140,Image,na,,,底图6,0-6.jpg
+806,Background 7,140,Image,na,,,底图7,0-7.jpg

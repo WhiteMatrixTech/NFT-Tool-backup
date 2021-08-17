@@ -64,7 +64,7 @@
 62,Bamboo hat 1,150,Hat,sr,1,"11,13,14,15,16,17,19",斗笠
 63,Bamboo hat 2,0,Hat,sr,1,,
 64,Bamboo hat 3,0,Hat,sr,1,,
-60,Bamboo hat 4,0,Hat,sr,1,,
+65,Bamboo hat 4,0,Hat,sr,1,,
 66,Bamboo hat 5,0,Hat,sr,1,,
 67,Bamboo hat 6,0,Hat,sr,1,,
 68,Miao silver 1,150,Hat,sr,1,"1,13,14,15,16,17,18,19",苗族头饰
@@ -254,13 +254,13 @@
 252,Human 4,500,Type,r,,,人类4
 253,Ghost,500,Type,r,,,亡灵
 254,Zombie,1000,Type,sr,,,兽人
-800,Base map 1,145,Image,na,,,底图1
-801,Base map 2,145,Image,na,,,底图2
-802,Base map 3,145,Image,na,,,底图3
-803,Base map 4,145,Image,na,,,底图4
-804,Base map 5,140,Image,na,,,底图5
-805,Base map 6,140,Image,na,,,底图6
-806,Base map 7,140,Image,na,,,底图7
+800,Background 1,145,Image,na,,,底图1
+801,Background 2,145,Image,na,,,底图2
+802,Background 3,145,Image,na,,,底图3
+803,Background 4,145,Image,na,,,底图4
+804,Background 5,140,Image,na,,,底图5
+805,Background 6,140,Image,na,,,底图6
+806,Background 7,140,Image,na,,,底图7
 807,None,180,Hat,n,0,,无
 808,None,120,Hat,r,0,,无
 809,None,250,Hat,sr,0,,无

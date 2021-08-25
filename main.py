@@ -114,11 +114,20 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
         generic_mat = bpy.data.materials.get("GenericMaterial").copy()
         if obj.data.materials:
             using_mat = obj.data.materials[0]
-            tex_image_node = using_mat.node_tree.nodes["Image Texture"]
-            using_tex = tex_image_node.image
+            
+            
 
-            generic_mat.node_tree.nodes["Image Texture"].image = using_tex
-            obj.data.materials[0] = generic_mat
+            if not "Image Texture" in using_mat.node_tree.nodes:
+                print(using_mat.node_tree.nodes)
+                for _n in using_mat.node_tree.nodes:
+                    print(_n)
+                raise Exception("Image Texture Node not found in Material. Res Name : " + str(obj.name))
+            else:
+                tex_image_node = using_mat.node_tree.nodes["Image Texture"]
+                using_tex = tex_image_node.image
+
+                generic_mat.node_tree.nodes["Image Texture"].image = using_tex
+                obj.data.materials[0] = generic_mat
 
     bpy.ops.object.select_all(action='DESELECT')
     

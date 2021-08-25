@@ -5,6 +5,7 @@ import json
 import math
 import mathutils
 #import better_fbx
+import platform
 
 TYPE_PAWN = "Pawn"
 TYPE_SCENE = "Scene"
@@ -17,28 +18,7 @@ composite_data_format = ["target", "pawns"]
 base_dir = os.path.dirname(os.path.abspath(__file__))
 data_dir = os.path.join(base_dir, 'data')
 
-# Mark all scene devices as GPU for cycles
-bpy.context.scene.cycles.device = 'GPU'
 
-print("---------------   SCENE LIST   ---------------")
-for scene in bpy.data.scenes:
-    print(scene.name)
-    scene.cycles.device = 'GPU'
-    # scene.render.resolution_percentage = 200 
-    # scene.cycles.samples = 128
-
-# Enable CUDA
-bpy.context.preferences.addons['cycles'].preferences.compute_device_type = 'CUDA'
-
-# Enable and list all devices, or optionally disable CPU
-print("----------------------------------------------")
-for devices in bpy.context.preferences.addons['cycles'].preferences.get_devices():
-    for d in devices:
-        d.use = True
-        if d.type == 'CPU':
-            d.use = False
-        print("Device '{}' type {} : {}" . format(d.name, d.type, d.use))
-print("----------------------------------------------")
 
 class ConfigNotFoundError(Exception):
     pass
@@ -134,11 +114,20 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
         generic_mat = bpy.data.materials.get("GenericMaterial").copy()
         if obj.data.materials:
             using_mat = obj.data.materials[0]
-            tex_image_node = using_mat.node_tree.nodes["Image Texture"]
-            using_tex = tex_image_node.image
+            
+            
 
-            generic_mat.node_tree.nodes["Image Texture"].image = using_tex
-            obj.data.materials[0] = generic_mat
+            if not "Image Texture" in using_mat.node_tree.nodes:
+                print(using_mat.node_tree.nodes)
+                for _n in using_mat.node_tree.nodes:
+                    print(_n)
+                raise Exception("Image Texture Node not found in Material. Res Name : " + str(obj.name))
+            else:
+                tex_image_node = using_mat.node_tree.nodes["Image Texture"]
+                using_tex = tex_image_node.image
+
+                generic_mat.node_tree.nodes["Image Texture"].image = using_tex
+                obj.data.materials[0] = generic_mat
 
     bpy.ops.object.select_all(action='DESELECT')
     
@@ -184,59 +173,59 @@ def make_pawn(global_config, composition_data, resource_data, pawn_param, apply_
 
     # item
     
-    item_objects = []
-
-    if apply_pose == True:
-
-        item_lefthand = -1
-        item_righthand = -1
-        if(composition_data_founded["Pawn_LeftHandID"] != ""):
-            item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
-        if(composition_data_founded["Pawn_RightHandID"] != ""):
-            item_righthand = round(composition_data_founded["Pawn_RightHandID"])
-
-        def apply_item(item_id, attach_bone):
-            bpy.ops.object.select_all(action='DESELECT')
-            res_founded = get_resource_data(resource_data, item_id, "Prop")
-            item_filepath = os.path.abspath(os.path.join(base_dir, "data", "input", res_founded["FilePath"]))
-            bpy.ops.import_scene.fbx( filepath = item_filepath, automatic_bone_orientation = True, force_connect_children = True  )
-            #better_fbx.fuck_fbx(bpy.context, item_filepath)
-            current_item_objects = bpy.context.selected_objects[:]
-            item_objects.extend(current_item_objects)
-            if(res_founded["Scale"] != ""):
-                for item_obj in current_item_objects:
-                    item_obj.scale = (float(res_founded["Scale"]), float(res_founded["Scale"]), float(res_founded["Scale"]))
-
-            item_obj = current_item_objects[0]
-            #for item_obj in current_item_objects:
-            #bpy.context.view_layer.objects.active = item_obj
-            #print(item_obj)
-            #c = item_obj.constraints.new(type='CHILD_OF')
-            #print("111111111111111111111111111111")
-            #c.target = bpy.data.objects["Bip001.005"]
-            #print(armature_obj)
-            #c.subtarget = attach_bone
-            #print(attach_bone)
-            bpy.ops.object.select_all(action='DESELECT')
-            armature_obj.select_set(True)
-            bone_matrix = armature_obj.matrix_world @ armature_obj.pose.bones[attach_bone].matrix
-            item_obj.location = bone_matrix.to_translation()
-            item_obj.rotation_euler = bone_matrix.to_euler()
-
-
-
-
-        if item_lefthand != -1:
-            apply_item(item_lefthand, "b_LWeapon")
-
-        if item_righthand != -1:
-            apply_item(item_righthand, "b_RWeapon")
+    #item_objects = []
+#
+    #if apply_pose == True:
+#
+    #    item_lefthand = -1
+    #    item_righthand = -1
+    #    if(composition_data_founded["Pawn_LeftHandID"] != ""):
+    #        item_lefthand = round(composition_data_founded["Pawn_LeftHandID"])
+    #    if(composition_data_founded["Pawn_RightHandID"] != ""):
+    #        item_righthand = round(composition_data_founded["Pawn_RightHandID"])
+#
+    #    def apply_item(item_id, attach_bone):
+    #        bpy.ops.object.select_all(action='DESELECT')
+    #        res_founded = get_resource_data(resource_data, item_id, "Prop")
+    #        item_filepath = os.path.abspath(os.path.join(base_dir, "data", "input", res_founded["FilePath"]))
+    #        bpy.ops.import_scene.fbx( filepath = item_filepath, automatic_bone_orientation = True, force_connect_children = True  )
+    #        #better_fbx.fuck_fbx(bpy.context, item_filepath)
+    #        current_item_objects = bpy.context.selected_objects[:]
+    #        item_objects.extend(current_item_objects)
+    #        if(res_founded["Scale"] != ""):
+    #            for item_obj in current_item_objects:
+    #                item_obj.scale = (float(res_founded["Scale"]), float(res_founded["Scale"]), float(res_founded["Scale"]))
+#
+    #        item_obj = current_item_objects[0]
+    #        #for item_obj in current_item_objects:
+    #        #bpy.context.view_layer.objects.active = item_obj
+    #        #print(item_obj)
+    #        #c = item_obj.constraints.new(type='CHILD_OF')
+    #        #print("111111111111111111111111111111")
+    #        #c.target = bpy.data.objects["Bip001.005"]
+    #        #print(armature_obj)
+    #        #c.subtarget = attach_bone
+    #        #print(attach_bone)
+    #        bpy.ops.object.select_all(action='DESELECT')
+    #        armature_obj.select_set(True)
+    #        bone_matrix = armature_obj.matrix_world @ armature_obj.pose.bones[attach_bone].matrix
+    #        item_obj.location = bone_matrix.to_translation()
+    #        item_obj.rotation_euler = bone_matrix.to_euler()
+#
+#
+#
+#
+    #    if item_lefthand != -1:
+    #        apply_item(item_lefthand, "b_LWeapon")
+#
+    #    if item_righthand != -1:
+    #        apply_item(item_righthand, "b_RWeapon")
 
 
     bpy.ops.object.select_all(action='DESELECT')
 
-    for item_obj in item_objects:
-        item_obj.select_set(True)
+    #for item_obj in item_objects:
+    #    item_obj.select_set(True)
 
     for comp_obj in component_objects:
         comp_obj.select_set(True)
@@ -257,24 +246,28 @@ def make_composite(global_config, composition_data, resource_data, composite_par
         node_composition_data_founded = get_composition_data(composition_data, node_id)
 
         node["Type"] = node_composition_data_founded["Type"]
-        node_world_pos = eval(node_composition_data_founded["Position"])
+        node_pos = eval(node_composition_data_founded["Position"])
+        node["Position"] = node_pos
 
-        if "IsRoot" in node:
-            root_position = node_world_pos
-            node["Position"] = [0, 0, 0]
-        else:
-            node["Position"] = [node_world_pos[0] - root_position[0], node_world_pos[1] - root_position[1], node_world_pos[2] - root_position[2]]
+        #if "IsRoot" in node:
+        #    root_position = node_world_pos
+        #    node["Position"] = [0, 0, 0]
+        #else:
+        #    node["Position"] = [node_world_pos[0] - root_position[0], node_world_pos[1] - root_position[1], node_world_pos[2] - root_position[2]]
 
         if node["Type"] == TYPE_SCENE:
             # load scene file
             scene_res_id = node_composition_data_founded["Scene_ResID"]
             res_founded = get_resource_data(resource_data, scene_res_id, TYPE_SCENE)
 
+            #bpy.context.scene.unit_settings.scale_length = 1
             scene_res_filepath = os.path.abspath(os.path.join(data_dir, "input", res_founded["FilePath"]))
-            bpy.ops.import_scene.fbx( filepath = scene_res_filepath, automatic_bone_orientation = True, force_connect_children = True )
-            scene_objects = bpy.context.selected_objects[:]
-            for scene_object in scene_objects:
-                scene_object.location = (node["Position"][0], node["Position"][1], node["Position"][2])
+            bpy.ops.import_scene.gltf( filepath = scene_res_filepath, bone_heuristic = 'BLENDER')
+
+            if "IsRoot" not in node:
+                scene_objects = bpy.context.selected_objects[:]
+                for scene_object in scene_objects:
+                    scene_object.location = (node["Position"][0], node["Position"][1], node["Position"][2])
 
         if node["Type"] == TYPE_PAWN:
             # load pawn file
@@ -284,27 +277,46 @@ def make_composite(global_config, composition_data, resource_data, composite_par
                 if pawn_id == pawn_data["id"] :
                     pawn_token_id = pawn_data["tokenId"]
                     break
-            
+            if not node_composition_data_founded["Rotation"] == "":
+                node["Rotation"] = eval(node_composition_data_founded["Rotation"])
+            else:
+                node["Rotation"] = ""
+                
             pawn_filepath = os.path.abspath(os.path.join(data_dir, "output", TYPE_PAWN ,str(pawn_id), TYPE_PAWN + "_" + str(pawn_token_id) + ".glb"))
             if os.path.isfile(pawn_filepath) == False:
                 print("pawn file not found ! please generate this pawn before composite  ID : " + str(pawn_id) + " tokenId : " + str(pawn_token_id) + " Path :" + str(pawn_filepath))
                 return
             
+            bpy.context.scene.unit_settings.scale_length = 100
             bpy.ops.import_scene.gltf( filepath = pawn_filepath, bone_heuristic = 'BLENDER')
+            bpy.context.scene.unit_settings.scale_length = 1
             pawn_objects = bpy.context.selected_objects[:]
             for pawn_object in pawn_objects:
-                pawn_object.location = (node["Position"][0], node["Position"][1], node["Position"][2])
+                if pawn_object.type == "ARMATURE":
+                    pawn_object.location = (node["Position"][0], node["Position"][1], node["Position"][2])
+
+                    if not node["Rotation"] == "":
+                        pawn_object.rotation_mode = 'XYZ'
+                        pawn_object.rotation_euler[0] = pawn_object.rotation_euler[0] + math.radians(node["Rotation"][0])
+                        pawn_object.rotation_euler[1] = pawn_object.rotation_euler[1] + math.radians(node["Rotation"][1])
+                        pawn_object.rotation_euler[2] = pawn_object.rotation_euler[2] + math.radians(node["Rotation"][2])
+
+                    #print("!!!!!!!!!!!!!!!!!!")
+                    #print(pawn_object)
+                    #print(pawn_object.rotation_euler)
             
             return
 
         node["Children"] = []
         for c in composition_data:
-            c_id = round(c["ID"])
-            c_parent_id = round(c["ParentID"])
-            if c_parent_id == node_id:
-                child_node = {}
-                child_node["ID"] = c_id
-                node["Children"].append(child_node)
+            if not c["ID"] == "":
+                c_id = round(c["ID"])
+                if not c["ParentID"] == "":
+                    c_parent_id = round(c["ParentID"])
+                    if c_parent_id == node_id:
+                        child_node = {}
+                        child_node["ID"] = c_id
+                        node["Children"].append(child_node)
 
         for child_node in node["Children"]:
             construct(child_node, root_position)
@@ -327,6 +339,11 @@ def export_model(export_filepath):
         #, export_format='GLTF_EMBEDDED'
         , use_selection = True, export_materials = 'EXPORT', export_animations = False, export_current_frame = True, export_skins = True)
 
+def export_model_composition(export_filepath):
+    bpy.ops.export_scene.gltf(filepath = export_filepath
+        #, export_format='GLTF_EMBEDDED'
+        , use_selection = False, export_materials = 'EXPORT', export_animations = False, export_current_frame = True, export_skins = True)
+
 def set_background_image(image_filepath):
     img = bpy.data.images.load(image_filepath)
     tree = bpy.context.scene.node_tree
@@ -340,15 +357,6 @@ def main(argv):
     output_mode = int(argv[0])
     input_param = json.loads(argv[1])
 
-    #bpy.ops.preferences.addon_enable(module='better_fbx')
-    #bpy.ops.script.reload()
-
-    environment_blend_file = os.path.join(data_dir, "input", "environment.blend")
-    bpy.ops.wm.open_mainfile(filepath = environment_blend_file)
-
-    #comp_filepath = os.path.abspath(os.path.join(base_dir, "input", "test617/HEAD/A59_HEAD_zongzi.FBX"))
-    #bpy.ops.import_scene.fbx( filepath = comp_filepath, automatic_bone_orientation = True, force_connect_children = True )
-    #better_fbx.fuck_fbx(bpy.context, comp_filepath)
 
     composition_json_filepath = os.path.join(data_dir, "composition.json")
     composition_json_file = open(composition_json_filepath)
@@ -368,6 +376,10 @@ def main(argv):
 
     # make and export
     if (output_mode == 0) or (output_mode == 1):
+        
+        environment_blend_file = os.path.join(data_dir, "input", "environment.blend")
+        bpy.ops.wm.open_mainfile(filepath = environment_blend_file)
+
         pawn_param = input_param
         if check_pawn_param(pawn_param) == False :
             return
@@ -407,26 +419,34 @@ def main(argv):
 
             
     if (output_mode == 2):
+
         composite_param = input_param
         if check_composite_param(composite_param) == False :
             return
-
-        make_composite(global_config, composition_data, resource_data, composite_param)
 
         target_id = composite_param["target"]
         composition_data_founded = get_composition_data(composition_data, target_id)
         target_type = composition_data_founded["Type"]
 
+        if target_type == TYPE_SCENE:
+            environment_blend_file = os.path.join(data_dir, "input", "environment_scene.blend")
+            bpy.ops.wm.open_mainfile(filepath = environment_blend_file)
+
+
+        make_composite(global_config, composition_data, resource_data, composite_param)
+
+        
         #picture
         composite_picture_filename = target_type + "_" + str(composite_param["tokenId"]) + ".png"
         composite_picture_filepath = os.path.join(output_path, target_type.lower(), composite_picture_filename)
         resolution_2d = global_config["Resolution"][target_type]
         export_picture(composite_picture_filepath, resolution_2d)
 
-        #model
-        #composite_model_filename = target_type + "_" + composite_param["tokenId"] + ".glb"
-        #composite_model_filepath = os.path.join(output_path, target_type.lower(), composite_model_filename)
-        #export_model(composite_model_filepath)
+        if target_type == TYPE_SCENE:
+            #model
+            composite_model_filename = target_type + "_" + str(composite_param["tokenId"]) + ".glb"
+            composite_model_filepath = os.path.join(output_path, target_type.lower(), composite_model_filename)
+            export_model_composition(composite_model_filepath)
 
 
     # do some cleaning
@@ -438,6 +458,31 @@ if __name__ == "__main__":
     argv = sys.argv
     argv = argv[argv.index("--") + 1:]  # get all args after "--"
     try:
+        os_name = platform.system()
+        if not os_name == "Windows":
+            # Mark all scene devices as GPU for cycles
+            bpy.context.scene.cycles.device = 'GPU'
+
+            print("---------------   SCENE LIST   ---------------")
+            for scene in bpy.data.scenes:
+                print(scene.name)
+                scene.cycles.device = 'GPU'
+                # scene.render.resolution_percentage = 200 
+                # scene.cycles.samples = 128
+
+            # Enable CUDA
+            bpy.context.preferences.addons['cycles'].preferences.compute_device_type = 'CUDA'
+
+            # Enable and list all devices, or optionally disable CPU
+            print("----------------------------------------------")
+            for devices in bpy.context.preferences.addons['cycles'].preferences.get_devices():
+                for d in devices:
+                    d.use = True
+                    if d.type == 'CPU':
+                        d.use = False
+                    print("Device '{}' type {} : {}" . format(d.name, d.type, d.use))
+            print("----------------------------------------------")
+
         main(argv)
     except ConfigNotFoundError as e:
         print(e)

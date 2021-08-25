@@ -1,22 +1,4 @@
 import json
-
-# with open('appearance_0814.json', 'r') as a:
-#     f1 = json.load(a)
-#     print(len(f1))
-#
-# with open('appearance.json', 'r') as b:
-#     f2 = json.load(b)
-#     print(len(f2))
-#
-# for i in range(10000):
-#     j1 = f1[i]
-#     j2 = f2[i]
-#     a, b = json.dumps(f1[i], sort_keys=True), json.dumps(f2[i], sort_keys=True)
-#     print(a == b)
-#     if a != b:
-#         print(a)
-#         print(b)
-
 import re
 
 from generate_random_pawn import parse_csv_to_nft_component_info
@@ -29,6 +11,13 @@ TRAIT_TABLE_V2 = {item.globalId: item for item in TRAITS_V2}
 
 print(TRAIT_TABLE_V1)
 print(TRAIT_TABLE_V2)
+
+RARITY_MAP = {
+    'n': 'Normal',
+    'r': 'Rare',
+    'sr': 'Super Rare',
+    'na': None
+}
 
 
 def get_failed_items():
@@ -54,9 +43,10 @@ def get_traits_for_item(item):
     else:
         trait_table = TRAIT_TABLE_V2
     for key in item:
-        if key != 'version' and key != 'signature':
-            trait_info = trait_table[item[key]]
+        if key == 'version' or key == 'signature':
+            continue
 
+        trait_info = trait_table[item[key]]
         trait_type = trait_info.type
         if trait_type.lower() == 'image':
             trait_type = 'background'
@@ -64,10 +54,19 @@ def get_traits_for_item(item):
             normalized_trait = trait_info.resourceName
         else:
             normalized_trait = re.sub(" \d+", " ", trait_info.resourceName).strip()
+
+        trait_type = trait_type.title()
         traits.append({
             "trait_type": trait_type,
             "value": normalized_trait
         })
+        rarity_value = RARITY_MAP[trait_info.rarity]
+        if rarity_value:
+            traits.append({
+                "trait_type": trait_type + ' Rarity',
+                "value": rarity_value
+            })
+        print(traits)
 
     item['traits'] = traits
 
@@ -87,9 +86,9 @@ def get_traits():
 
     for idx, item in enumerate(f1):
         item_to_add = item
-        print(item_to_add)
+        # print(item_to_add)
         if item['signature'] not in failed_items:
-            item['version'] = 1
+            item['version'] = 2
         else:
             print(item, 'failed, will find in another file')
             item_backup = f2[idx]
@@ -99,6 +98,7 @@ def get_traits():
         try:
             get_traits_for_item(item_to_add)
         except KeyError as e:
+            print('error:')
             print(e)
         all_items_with_traits.append(item_to_add)
     print(all_items_with_traits[0])
@@ -106,5 +106,5 @@ def get_traits():
 
 
 all_items_with_traits = get_traits()
-with open("all_item_with_traits_0817.json", "w") as json_file:
+with open("all_item_with_traits_0818.json", "w") as json_file:
     json.dump(all_items_with_traits, json_file)
